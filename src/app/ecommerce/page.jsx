@@ -83,7 +83,7 @@ export default function Ecommerce() {
                             </div>
                             <div className="mt-auto px-6 pb-6 sm:px-10">
                                 <a
-                                    href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}.`}
+                                    href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full inline-flex justify-center bg-indigo-600 border border-transparent rounded-md py-3 px-5 text-base leading-6 font-medium text-white hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
