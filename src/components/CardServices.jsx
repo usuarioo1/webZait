@@ -19,7 +19,7 @@ const services = [
     {
         title: "E-commerce",
         description:
-            "Diseñamos interfaces intuitivas y atractivas centradas en la experiencia del usuario.",
+            "Diseñamos tindas Online eficientes y escalables",
         icon: "🛒",
         link: 'ecommerce',
         details: [
@@ -33,7 +33,7 @@ const services = [
     {
         title: "Apps Web",
         description:
-            "Mejoramos la visibilidad de tu sitio web en los motores de búsqueda.",
+            "Aplicaciones web personalizadas",
         icon: "🚀",
         link: 'appweb',
         details: [
