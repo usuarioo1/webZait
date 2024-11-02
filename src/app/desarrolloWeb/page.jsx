@@ -90,7 +90,7 @@ export default function DesarrolloWeb() {
 
                         <div className="mt-auto p-6 bg-gray-50">
                             <a
-                                href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}.`}
+                                href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-full inline-flex justify-center items-center bg-black text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition duration-300"
