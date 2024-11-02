@@ -19,7 +19,7 @@ const services = [
     {
         title: "E-commerce",
         description:
-            "Diseñamos tindas Online eficientes y escalables",
+            "Diseñamos tiendas Online eficientes y escalables",
         icon: "🛒",
         link: 'ecommerce',
         details: [
