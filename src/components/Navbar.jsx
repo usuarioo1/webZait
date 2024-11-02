@@ -32,7 +32,7 @@ const Navbar = () => {
                                 
                             </ul>
                         </li>
-                        <li><Link href='aboutUs'>Sobre nosotros</Link></li>
+                        <li><Link href='nosotros'>Sobre nosotros</Link></li>
                         <li><Link href='contacto'>Contacto</Link></li>
                     </ul>
                 </div>
