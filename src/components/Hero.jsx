@@ -5,7 +5,7 @@ const Hero = () => {
         <div
             className="hero min-h-screen"
             style={{
-                backgroundImage: "url(https://res.cloudinary.com/dpbpyzl96/image/upload/v1724809911/iWEB/hpf22m3h6kwnl7atadl0.jpg)",
+                backgroundImage: `url(https://res.cloudinary.com/dpbpyzl96/image/upload/v1724809911/iWEB/hpf22m3h6kwnl7atadl0.jpg)`,
             }}>
             <div className="hero-overlay bg-opacity-80"></div>
             <div className="hero-content text-neutral-content text-center">
