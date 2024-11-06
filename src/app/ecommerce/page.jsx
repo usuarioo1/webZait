@@ -19,32 +19,43 @@ export default function Ecommerce() {
             nombre: "Tienda Avanzada",
             precio: "$ 850.000",
             caracteristicas: [
-                "Hasta 200 productos",
+                "**Hasta 200 productos**",
+                "Diseño responsivo",
                 "Diseño personalizado",
                 "Carrito de compras avanzado",
                 "Integración con redes sociales",
                 "Panel de administración",
                 "Capacitación uso de Panel A.",
                 "Confirmación de venta por Correo",
-                "Soporte por correo",
                 "Certificado SSL",
                 "Hosting y dominio por un año",
+                "Soporte por correo",
+                
+                
             ],
         },
         {
             nombre: "Tienda Premium",
             precio: "$ 1.250.000",
             caracteristicas: [
-                "Productos ilimitados",
+                "**Productos ilimitados**",
+                "Diseño responsivo",
                 "Diseño personalizado",
                 "Carrito de compras avanzado",
-                "Confirmación de venta por Correo",
                 "Integración con redes sociales",
-                "Sistema de usuarios",
-                "Múltiples pasarelas de pago",
-                "Soporte prioritario 24/7",
+                "Panel de administración",
+                "Capacitación uso de Panel A.",
+                "Confirmación de venta por Correo",
+              
+              
+                
+                
                 "Certificado SSL",
                 "Hosting y dominio por un año",
+                "**Sistema de usuarios**",
+                "**Múltiples pasarelas de pago**",
+                "**Soporte prioritario 24/7**",
+                
             ],
         },
     ];
@@ -54,10 +65,9 @@ export default function Ecommerce() {
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-4xl font-extrabold text-white text-center mb-8">Soluciones E-commerce</h1>
                 <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12">
-    Este tipo de sitio incluye más funcionalidades, como la integración de carritos de compra, pasarelas de pago, y administración de productos. El precio puede variar dependiendo del número de productos, la personalización del diseño, y las integraciones necesarias.
-    Todos los planes incluyen las secciones de <strong>sobre nosotros</strong> y <strong>contacto</strong>.
-</p>
-
+                    Este tipo de sitio incluye más funcionalidades, como la integración de carritos de compra, pasarelas de pago, y administración de productos. El precio puede variar dependiendo del número de productos, la personalización del diseño, y las integraciones necesarias.
+                    Todos los planes incluyen las secciones de <strong className="text-white">Sobre nosotros</strong>, <strong className="text-white">Contacto y Productos</strong>.
+                </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {planes.map((plan) => (
@@ -77,21 +87,22 @@ export default function Ecommerce() {
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                                                 </svg>
                                             </div>
-                                            <p className="ml-3 text-base leading-6 text-gray-700">{caracteristica}</p>
+                                            <p className={`ml-3 text-base leading-6 text-gray-700 ${caracteristica.startsWith("**") ? "font-bold" : ""}`}>
+                                                {caracteristica.replace(/\*\*/g, "")}
+                                            </p>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                             <div className="mt-auto px-6 pb-6 sm:px-10">
                                 <a
-                                    href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre).replace()}`}
+                                    href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full inline-flex justify-center bg-indigo-600 border border-transparent rounded-md py-3 px-5 text-base leading-6 font-medium text-white hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
                                 >
                                     Seleccionar Plan
                                 </a>
-
                             </div>
                         </div>
                     ))}

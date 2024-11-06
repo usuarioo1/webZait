@@ -1,47 +1,39 @@
 export default function DesarrolloWeb() {
+    const caracteristicasComunes = [
+        "Enlaces a redes sociales",
+        "Hosting y dominio por un año",
+        "Certificado SSL",
+        "Responsive design (se adapta a teléfonos y tablets)",
+        "Diseño personalizado",
+    ];
+
     const planes = [
         {
             nombre: "Básico",
             precio: "$ 100.000",
             caracteristicas: [
                 "Diseño de una página",
-                "Responsive design (se adapta a teléfonos y tablets)",
-                "Hosting y dominio por un año",
-                "Enlaces a redes sociales",
-                "Certificado SSL"
+                ...caracteristicasComunes
             ],
             ideas: [
                 "Página personal para portafolio o CV",
                 "Landing page de eventos o conferencias",
                 "Página informativa para negocios pequeños"
             ],
-            ejemplos: [
-                "Ejemplo de blog personal",
-                "Ejemplo de landing page para eventos",
-                "Ejemplo de sitio de presentación para productos"
-            ]
         },
         {
             nombre: "Estándar",
             precio: "$ 150.000",
             caracteristicas: [
                 "Hasta 3 vistas (rutas en la página)",
-                "Diseño personalizado",
-                "Enlaces a redes sociales",
-                "Hosting y dominio por un año",
-                "Formulario de contacto",
-                "Certificado SSL"
+                ...caracteristicasComunes,
+                "Formulario de contacto"
             ],
             ideas: [
                 "Sitio para servicios profesionales con formulario de contacto",
                 "Portafolio de proyectos con galerías",
                 "Web de pequeños negocios con sección de servicios y contacto"
             ],
-            ejemplos: [
-                "Ejemplo de sitio para fotógrafo",
-                "Ejemplo de web de agencia de marketing",
-                "Ejemplo de página de restaurante con menú en línea"
-            ]
         },
     ];
 
@@ -75,25 +67,27 @@ export default function DesarrolloWeb() {
                                         >
                                             <path d="M5 13l4 4L19 7"></path>
                                         </svg>
-                                        {caracteristica}
+                                        <span className={caracteristicasComunes.includes(caracteristica) ? "" : "font-bold"}>
+                                            {caracteristica}
+                                        </span>
                                     </li>
                                 ))}
                             </ul>
+                        </div>
 
-                            <h4 className="text-lg font-semibold text-gray-800 mt-4">Ideas</h4>
+                        <div className="p-6 bg-gray-50">
+                            <h4 className="text-lg font-semibold text-gray-800">Ideas</h4>
                             <ul className="list-disc list-inside text-gray-700 mb-4">
                                 {plan.ideas.map((idea, index) => (
                                     <li key={index}>{idea}</li>
                                 ))}
                             </ul>
-                        </div>
 
-                        <div className="mt-auto p-6 bg-gray-50">
                             <a
                                 href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full inline-flex justify-center items-center bg-black text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition duration-300"
+                                className="mt-9 w-full inline-flex justify-center items-center bg-black text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition duration-300"
                             >
                                 Seleccionar Plan
                             </a>
