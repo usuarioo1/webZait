@@ -57,7 +57,7 @@ const ServiceCards = () => {
                     className="bg-white p-6 rounded-lg shadow-lg text-center transition duration-200 transform hover:scale-105 flex flex-col h-full"
                 >
                     <div className="text-4xl mb-4">{service.icon}</div>
-                    <h3 className="text-2xl font-bold mb-2 text-black">{service.title}</h3>
+                    <h1 className="text-2xl font-bold mb-2 text-black">{service.title}</h1>
                     <p className="text-gray-600 mb-4">{service.description}</p>
                     
                     {/* Lista de detalles específicos */}

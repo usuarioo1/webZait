@@ -24,7 +24,7 @@ export default function ContactPage() {
 
                 {/* Columna derecha - Formulario de contacto */}
                 <div className="bg-white rounded-lg shadow-lg p-6 space-y-6">
-                    <form className="space-y-6">
+                    <form className="space-y-6" action="https://formsubmit.co/nicolasgonzalezmoller@gmail.com" method="POST">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-black mb-2 ml-2">Nombre</label>
                             <input
@@ -46,6 +46,16 @@ export default function ContactPage() {
                             />
                         </div>
                         <div>
+                            <label htmlFor="subject" className="block text-sm font-medium mb-2 ml-2 text-black">Asunto</label>
+                            <input type="text"
+
+
+                                id="subject"
+                                name="subject"
+                                className="input input-bordered flex items-center gap-2 w-full  bg-white text-black"
+                                placeholder="Asunto" />
+                        </div>
+                        <div>
                             <label htmlFor="message" className="block text-sm font-medium mb-2 ml-2 text-black">Mensaje</label>
                             <textarea
                                 id="message"
@@ -54,6 +64,8 @@ export default function ContactPage() {
                                 className="input input-bordered flex items-center gap-2 w-full  bg-white text-black"
                                 placeholder="Tu mensaje"
                             ></textarea>
+                            <input type="hidden" name="_next" value="https://webzait.cl/contacto" />
+                            <input type="hidden" name="_captcha" value="false" />
                         </div>
                         <div>
                             <button

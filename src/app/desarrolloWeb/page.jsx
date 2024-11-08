@@ -10,7 +10,7 @@ export default function DesarrolloWeb() {
     const planes = [
         {
             nombre: "Básico",
-            precio: "$ 100.000",
+            precio: "$ 120.000",
             caracteristicas: [
                 "Diseño de una página",
                 ...caracteristicasComunes
