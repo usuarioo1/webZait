@@ -68,6 +68,18 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
         />
+        {/* Google Tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7MQCH1FLL"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-W7MQCH1FLL');
+            `,
+          }}
+        />
       </Head>
       <body className={inter.className}>
         <Navbar />
