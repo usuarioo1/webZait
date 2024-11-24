@@ -5,7 +5,7 @@ const Hero = () => {
         <section
             className="hero min-h-screen"
             style={{
-                backgroundImage: `url(https://res.cloudinary.com/dpbpyzl96/image/upload/v1724809911/iWEB/hpf22m3h6kwnl7atadl0.jpg)`,
+                backgroundImage: `url(https://res.cloudinary.com/dpbpyzl96/image/upload/v1732489927/portafolio-fotografia/ng3r4k10zdxglklaosa1.jpg)`,
             }}
             aria-label="Hero section for WebZait, specializing in high-performance web design and development."
         >
