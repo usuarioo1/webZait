@@ -37,7 +37,7 @@ const Navbar = () => {
                         <li><Link href='contacto'>Contacto</Link></li>
                     </ul>
                 </div>
-                <Link href='/' className="flex items-center text-2xl space-x-2">
+                <Link href='/' className="flex items-center space-x-2">
                     <Image
                         src="https://res.cloudinary.com/dpbpyzl96/image/upload/v1732492473/iWEB/h6yxpbcsbxg36wsbdrwq.ico"
                         alt="WebZait Logo"
@@ -45,7 +45,8 @@ const Navbar = () => {
                         height={32}
                         className="h-20 w-24 rounded-full"
                     />
-                    <span>WebZait</span>
+                    {/* Texto visible solo en pantallas grandes */}
+                    <span className="hidden lg:block text-2xl">WebZait</span>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
