@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+
 const Navbar = () => {
     return (
         <div className="navbar bg-black">
@@ -29,23 +31,31 @@ const Navbar = () => {
                                 <li><Link href='desarrolloWeb'>Sitios Web</Link></li>
                                 <li><Link href='ecommerce'>E-commerce</Link></li>
                                 <li><Link href='appweb'>Aplicaciones Web</Link></li>
-                                
                             </ul>
                         </li>
                         <li><Link href='nosotros'>Sobre nosotros</Link></li>
                         <li><Link href='contacto'>Contacto</Link></li>
                     </ul>
                 </div>
-                <Link href='/' className="btn btn-ghost text-2xl">WebZait</Link>
+                <Link href='/' className="flex items-center text-2xl space-x-2">
+                    <Image
+                        src="https://res.cloudinary.com/dpbpyzl96/image/upload/v1732492473/iWEB/h6yxpbcsbxg36wsbdrwq.ico"
+                        alt="WebZait Logo"
+                        width={32}
+                        height={32}
+                        className="h-20 w-24 rounded-full"
+                    />
+                    <span>WebZait</span>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <Link href='/'>
-                    <li><p className='text-2xl '>Inicio</p></li>
+                        <li><p className='text-2xl '>Inicio</p></li>
                     </Link>
                     <li>
                         <details>
-                            <summary className='text-2xl' >Servicios</summary>
+                            <summary className='text-2xl'>Servicios</summary>
                             <ul className="p-2 bg-black w-36">
                                 <li><Link href='desarrolloWeb'>Sitios Web</Link></li>
                                 <li><Link href='ecommerce'>E-commerce</Link></li>
@@ -53,9 +63,8 @@ const Navbar = () => {
                             </ul>
                         </details>
                     </li>
-                    <Link href={'nosotros'}><li><p  className='text-2xl '>Sobre Nosotros</p></li></Link>
-                    
-                    <Link href='contacto'><li><p  className='text-2xl'>Contacto</p></li></Link>
+                    <Link href={'nosotros'}><li><p className='text-2xl '>Sobre Nosotros</p></li></Link>
+                    <Link href='contacto'><li><p className='text-2xl'>Contacto</p></li></Link>
                 </ul>
             </div>
             <div className="navbar-end">
