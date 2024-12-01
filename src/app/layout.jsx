@@ -9,26 +9,27 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "WebZait | Páginas y aplicaciones Web ",
-  description: "Sitios Web de alto rendimiento",
+  title: "WebZait.cl | Desarrollo y Diseño de Páginas y Aplicaciones Web",
+  description: "Especialistas en crear sitios web de alto rendimiento, tiendas online, y aplicaciones web personalizadas para negocios y emprendedores.",
   keywords: [
-    "desarrollo web",
-    "diseño de páginas web",
-    "creación de ecommerces",
-    "aplicaciones web",
-    "páginas web personalizadas",
-    "sitios web de alto rendimiento",
-    "tiendas online",
-    "landing pages",
-    "web corporativa",
-    "diseño de tiendas online",
-    "soluciones digitales",
-    "sitios responsivos",
-    "optimización web",
-    "desarrollo de aplicaciones",
-    "web profesional"
+    "desarrollo web profesional",
+    "diseño de páginas web modernas",
+    "creación de ecommerces personalizados",
+    "aplicaciones web a medida",
+    "páginas web optimizadas",
+    "sitios web responsivos y rápidos",
+    "tiendas online efectivas",
+    "landing pages atractivas",
+    "web corporativa para empresas",
+    "diseño de tiendas virtuales",
+    "soluciones digitales innovadoras",
+    "optimización de sitios web",
+    "servicios de desarrollo web",
+    "web profesional para negocios",
+    "experiencia digital única"
   ]
 };
+
 
 const jsonLdData = {
   "@context": "https://schema.org",
