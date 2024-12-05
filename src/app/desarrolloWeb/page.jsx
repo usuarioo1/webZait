@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function DesarrolloWeb() {
     const caracteristicasComunes = [
         "Enlaces a redes sociales",
@@ -95,6 +97,23 @@ export default function DesarrolloWeb() {
                     </div>
                 ))}
             </div>
+            <div>
+    <div className="flex justify-center text-white text-4xl font-bold mt-8">Ejemplos</div>
+    <ul className="mt-8">
+        <li className="mb-4">
+            <Link className="btn glass text-2xl text-white" href='https://landing-ejemplo-chocolateria.vercel.app/'>
+                Landing Page ejemplo
+            </Link>
+        </li>
+        <li className="mb-4">
+            <Link className="btn glass text-2xl text-white mt-4" href='https://cv-test-two.vercel.app/'>
+                Cv Online
+            </Link>
+        </li>
+    </ul>
+</div>
+
+
         </div>
     );
 }

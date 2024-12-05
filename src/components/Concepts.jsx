@@ -6,7 +6,7 @@ const glossaryTerms = [
     {
         title: "Landing Page",
         description:
-            "Una Landing Page es una página web diseñada específicamente para captar la atención del usuario y guiarlo hacia una acción, como suscribirse o realizar una compra.",
+            "Una Landing Page es una página web diseñada específicamente para captar la atención del usuario y guiarlo hacia una acción, como suscribirse o realizar una compra. Por ejemplo, este sitio web es una Landing Page",
         icon: "📄",
         useCase: "Ideal para campañas publicitarias o promociones específicas.",
     },
