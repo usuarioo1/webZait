@@ -110,6 +110,11 @@ export default function DesarrolloWeb() {
                 Cv Online
             </Link>
         </li>
+        <li className="mb-4">
+                <Link className="btn glass text-2xl text-white mt-4" href='https://gallery-photography.vercel.app/'>
+                Portafolio Fotografía
+                </Link>
+        </li>
     </ul>
 </div>
 
