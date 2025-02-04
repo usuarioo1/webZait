@@ -49,13 +49,13 @@ const services = [
 
 const ServiceCards = () => {
     return (
-        <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 mt-28">
             <h2 className="text-white text-center text-6xl font-bold mb-8">servicios</h2>
         <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {services.map((service, index) => (
                 <div
                     key={index}
-                    className="bg-white p-6 rounded-lg shadow-lg text-center transition duration-200 transform hover:scale-105 flex flex-col h-full"
+                    className="bg-white p-6 rounded-lg shadow-lg text-center transition duration-200 transform hover:scale-105 flex flex-col h-full mt-14"
                 >
                     <div className="text-4xl mb-4">{service.icon}</div>
                     <h1 className="text-2xl font-bold mb-2 text-black">{service.title}</h1>
