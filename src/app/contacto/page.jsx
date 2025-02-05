@@ -5,7 +5,7 @@ export default function ContactPage() {
                 {/* Columna izquierda - Contenido de texto */}
                 <div className="space-y-6">
                     <h1 className="text-4xl font-bold tracking-tight text-white">Ponte en contacto</h1>
-                    <p className="text-lg text-gray-300">
+                    <p className="text-lg text-white">
                         Nos encantaría saber de ti. Por favor, rellena este formulario y nos pondremos en contacto contigo lo antes posible.
                     </p>
                     {/* <div className="space-y-4">

@@ -1,3 +1,5 @@
+'use client';
+import { motion } from 'framer-motion';
 import Link from "next/link";
 
 export default function DesarrolloWeb() {
@@ -41,15 +43,41 @@ export default function DesarrolloWeb() {
 
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="mb-6 text-4xl font-bold text-center text-white">Desarrollo Web</h1>
-            <p className="mb-8 text-lg text-center max-w-3xl mx-auto text-gray-200">
+            <motion.h1 
+                className="mb-6 text-4xl font-bold text-center text-white"
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ duration: 0.6 }}
+            >
+                Desarrollo Web
+            </motion.h1>
+            <motion.p 
+                className="mb-8 text-lg text-center max-w-3xl mx-auto text-gray-200"
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ duration: 0.8 }}
+            >
                 Estos son sitios más sencillos, generalmente de una sola página, con un diseño básico y funcionalidad mínima, como enlaces a redes sociales. Son ideales para pequeñas empresas o proyectos personales que buscan una presencia básica en línea.
-            </p>
+            </motion.p>
 
-            <h2 className="mb-6 text-3xl font-semibold text-center text-white">Nuestros Planes</h2>
+            <motion.h2 
+                className="mb-6 text-3xl font-semibold text-center text-white"
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ duration: 0.8, delay: 0.4 }}
+            >
+                Nuestros Planes
+            </motion.h2>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                {planes.map((plan) => (
-                    <div key={plan.nombre} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
+                {planes.map((plan, index) => (
+                    <motion.div
+                        key={plan.nombre}
+                        className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.2 }}
+                    >
                         <div className="p-6 bg-gray-50">
                             <h3 className="text-2xl font-bold text-gray-800">{plan.nombre}</h3>
                             <p className="text-3xl font-semibold text-gray-600 mt-2">{plan.precio}</p>
@@ -57,7 +85,13 @@ export default function DesarrolloWeb() {
                         <div className="p-6 flex-grow">
                             <ul className="space-y-2 mb-4">
                                 {plan.caracteristicas.map((caracteristica, index) => (
-                                    <li key={index} className="flex items-center text-gray-700">
+                                    <motion.li 
+                                        key={index}
+                                        className="flex items-center text-gray-700"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                                    >
                                         <svg
                                             className="h-5 w-5 text-green-500 mr-2"
                                             fill="none"
@@ -72,7 +106,7 @@ export default function DesarrolloWeb() {
                                         <span className={caracteristicasComunes.includes(caracteristica) ? "" : "font-bold"}>
                                             {caracteristica}
                                         </span>
-                                    </li>
+                                    </motion.li>
                                 ))}
                             </ul>
                         </div>
@@ -81,7 +115,14 @@ export default function DesarrolloWeb() {
                             <h4 className="text-lg font-semibold text-gray-800">Ideas</h4>
                             <ul className="list-disc list-inside text-gray-700 mb-4">
                                 {plan.ideas.map((idea, index) => (
-                                    <li key={index}>{idea}</li>
+                                    <motion.li 
+                                        key={index}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                                    >
+                                        {idea}
+                                    </motion.li>
                                 ))}
                             </ul>
 
@@ -94,31 +135,41 @@ export default function DesarrolloWeb() {
                                 Seleccionar Plan
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-            <div>
-    <div className="flex justify-center text-white text-4xl font-bold mt-8">Ejemplos</div>
-    <ul className="mt-8">
-        <li className="mb-4">
-            <Link className="btn glass text-2xl text-white" href='https://landing-ejemplo-chocolateria.vercel.app/'>
-                Landing Page ejemplo
-            </Link>
-        </li>
-        <li className="mb-4">
-            <Link className="btn glass text-2xl text-white mt-4" href='https://cv-test-two.vercel.app/'>
-                Cv Online
-            </Link>
-        </li>
-        <li className="mb-4">
-                <Link className="btn glass text-2xl text-white mt-4" href='https://gallery-photography.vercel.app/'>
-                Portafolio Fotografía
-                </Link>
-        </li>
-    </ul>
-</div>
 
+            <motion.div
+                className="flex justify-center text-white text-4xl font-bold mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+            >
+                Ejemplos
+            </motion.div>
 
+            <motion.ul 
+                className="mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 1.4 }}
+            >
+                <motion.li className="mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 1.6 }}>
+                    <Link className="btn glass text-2xl text-white" href='https://landing-ejemplo-chocolateria.vercel.app/'>
+                        Landing Page ejemplo
+                    </Link>
+                </motion.li>
+                <motion.li className="mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 1.8 }}>
+                    <Link className="btn glass text-2xl text-white mt-4" href='https://cv-test-two.vercel.app/'>
+                        Cv Online
+                    </Link>
+                </motion.li>
+                <motion.li className="mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 2 }}>
+                    <Link className="btn glass text-2xl text-white mt-4" href='https://gallery-photography.vercel.app/'>
+                        Portafolio Fotografía
+                    </Link>
+                </motion.li>
+            </motion.ul>
         </div>
     );
 }

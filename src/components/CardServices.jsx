@@ -49,7 +49,7 @@ const services = [
 
 const ServiceCards = () => {
     return (
-        <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 mt-28">
+        <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 mt-64">
             <h2 className="text-white text-center text-6xl font-bold mb-8">servicios</h2>
         <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {services.map((service, index) => (

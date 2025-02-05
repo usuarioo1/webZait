@@ -25,17 +25,17 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-black rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>Inicio</a></li>
+                        <li className='text-white'><Link href='/'>Inicio</Link></li>
                         <li>
                             <a>Servicios</a>
                             <ul className="p-2">
-                                <li><Link href='desarrolloWeb'>Sitios Web</Link></li>
-                                <li><Link href='ecommerce'>E-commerce</Link></li>
-                                <li><Link href='appweb'>Aplicaciones Web</Link></li>
+                                <li className='text-white'><Link href='desarrolloWeb'>Sitios Web</Link></li>
+                                <li className='text-white'><Link href='ecommerce'>E-commerce</Link></li>
+                                <li className='text-white'><Link href='appweb'>Aplicaciones Web</Link></li>
                             </ul>
                         </li>
-                        <li><Link href='nosotros'>Sobre nosotros</Link></li>
-                        <li><Link href='contacto'>Contacto</Link></li>
+                        <li className='text-white' ><Link href='nosotros'>Sobre nosotros</Link></li>
+                        <li className='text-white'><Link href='contacto'>Contacto</Link></li>
                     </ul>
                 </div>
                 <Link href='/' className="flex items-center space-x-2">
@@ -47,26 +47,26 @@ const Navbar = () => {
                         className="h-20 w-24 rounded-full"
                     />
                     {/* Texto visible solo en pantallas grandes */}
-                    <span className="hidden lg:block text-2xl">WebZait</span>
+                    <span className="hidden lg:block text-2xl text-white">WebZait</span>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <Link href='/'>
-                        <li><p className='text-2xl '>Inicio</p></li>
+                        <li><p className='text-2xl text-white'>Inicio</p></li>
                     </Link>
                     <li>
                         <details>
-                            <summary className='text-2xl'>Servicios</summary>
+                            <summary className='text-2xl text-white'>Servicios</summary>
                             <ul className="p-2 bg-black w-36">
-                                <li><Link href='desarrolloWeb'>Sitios Web</Link></li>
-                                <li><Link href='ecommerce'>E-commerce</Link></li>
-                                <li><Link href='appweb'>Aplicaciones Web</Link></li>
+                                <li className='text-white'><Link href='desarrolloWeb'>Sitios Web</Link></li>
+                                <li className='text-white'><Link href='ecommerce'>E-commerce</Link></li>
+                                <li className='text-white'><Link href='appweb'>Aplicaciones Web</Link></li>
                             </ul>
                         </details>
                     </li>
-                    <Link href={'nosotros'}><li><p className='text-2xl '>Sobre Nosotros</p></li></Link>
-                    <Link href='contacto'><li><p className='text-2xl'>Contacto</p></li></Link>
+                    <Link href={'nosotros'}><li><p className='text-2xl text-white '>Sobre Nosotros</p></li></Link>
+                    <Link href='contacto'><li><p className='text-2xl text-white'>Contacto</p></li></Link>
                 </ul>
             </div>
             <div className="navbar-end">
