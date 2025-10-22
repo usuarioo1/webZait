@@ -43,27 +43,28 @@ export default function DesarrolloWeb() {
 
     return (
         <div className="container mx-auto px-4 py-8">
-            <motion.h1 
+            <motion.h1
                 className="mb-6 text-4xl font-bold text-center text-white"
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.6 }}
             >
                 Desarrollo Web
             </motion.h1>
-            <motion.p 
+            <motion.p
                 className="mb-8 text-lg text-center max-w-3xl mx-auto text-gray-200"
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                Estos son sitios más sencillos, generalmente de una sola página, con un diseño básico y funcionalidad mínima, como enlaces a redes sociales. Son ideales para pequeñas empresas o proyectos personales que buscan una presencia básica en línea.
+                Son sitios simples y directos, normalmente de una sola página, con un diseño limpio y lo esencial: como enlaces a tus redes sociales. Botones de contacto directo. Perfectos para pequeños negocios o proyectos personales que buscan tener presencia online sin complicaciones.
             </motion.p>
 
-            <motion.h2 
+
+            <motion.h2
                 className="mb-6 text-3xl font-semibold text-center text-white"
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
             >
                 Nuestros Planes
@@ -85,7 +86,7 @@ export default function DesarrolloWeb() {
                         <div className="p-6 flex-grow">
                             <ul className="space-y-2 mb-4">
                                 {plan.caracteristicas.map((caracteristica, index) => (
-                                    <motion.li 
+                                    <motion.li
                                         key={index}
                                         className="flex items-center text-gray-700"
                                         initial={{ opacity: 0 }}
@@ -115,7 +116,7 @@ export default function DesarrolloWeb() {
                             <h4 className="text-lg font-semibold text-gray-800">Ideas</h4>
                             <ul className="list-disc list-inside text-gray-700 mb-4">
                                 {plan.ideas.map((idea, index) => (
-                                    <motion.li 
+                                    <motion.li
                                         key={index}
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
@@ -148,7 +149,7 @@ export default function DesarrolloWeb() {
                 Ejemplos
             </motion.div>
 
-            <motion.ul 
+            <motion.ul
                 className="mt-8"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
