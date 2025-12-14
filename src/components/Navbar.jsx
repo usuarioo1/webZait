@@ -32,6 +32,7 @@ const Navbar = () => {
                                 <li className='text-white'><Link href='desarrolloWeb'>Sitios Web</Link></li>
                                 <li className='text-white'><Link href='ecommerce'>E-commerce</Link></li>
                                 <li className='text-white'><Link href='appweb'>Aplicaciones Web</Link></li>
+                                <li className='text-white'><Link href='marketingDigital'>Marketing Digital</Link></li>
                             </ul>
                         </li>
                         <li className='text-white' ><Link href='nosotros'>Sobre nosotros</Link></li>
@@ -58,10 +59,11 @@ const Navbar = () => {
                     <li>
                         <details>
                             <summary className='text-2xl text-white'>Servicios</summary>
-                            <ul className="p-2 bg-black w-36">
+                            <ul className="p-2 bg-black w-48">
                                 <li className='text-white'><Link href='desarrolloWeb'>Sitios Web</Link></li>
                                 <li className='text-white'><Link href='ecommerce'>E-commerce</Link></li>
                                 <li className='text-white'><Link href='appweb'>Aplicaciones Web</Link></li>
+                                <li className='text-white'><Link href='marketingDigital'>Marketing Digital</Link></li>
                             </ul>
                         </details>
                     </li>

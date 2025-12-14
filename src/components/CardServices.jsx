@@ -44,6 +44,19 @@ const services = [
             "Diseño de backend y base de datos para manejo de datos complejo"
         ]
     },
+    {
+        title: "Marketing Digital",
+        description:
+            "Campañas publicitarias en Meta (Facebook e Instagram)",
+        icon: "📢",
+        link: 'marketingDigital',
+        details: [
+            "Configuración profesional de Facebook e Instagram",
+            "Creación de campañas publicitarias para diferentes objetivos.",
+            "Configuración de Meta Business Suite y Meta Pixel.",
+            "Segmentación avanzada y retargeting."
+        ]
+    },
 ];
 
 
