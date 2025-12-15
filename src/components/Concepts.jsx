@@ -1,6 +1,6 @@
+'use client'
 import React from "react";
-
-
+import { motion } from "framer-motion";
 
 const glossaryTerms = [
     {
@@ -78,24 +78,39 @@ const glossaryTerms = [
 const Conceptos = () => {
     return (
         <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <h2 className="text-5xl font-bold text-center mb-8 text-white">
+            <motion.h2 
+                className="text-5xl font-bold text-center mb-8 text-white"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+            >
                 Conceptos Clave
-            </h2>
+            </motion.h2>
             <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-20">
                 {glossaryTerms.map((term, index) => (
-                    <div
+                    <motion.div
                         key={index}
-                        className="bg-white p-6 rounded-lg shadow-lg text-center transition duration-200 transform hover:scale-105 flex flex-col h-full"
+                        className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:scale-105 flex flex-col h-full"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
-                        <div className="text-4xl mb-4">{term.icon}</div>
-                        <h1 className="text-2xl font-bold mb-2 text-black">{term.title}</h1>
-                        <p className="text-gray-600 mb-4">{term.description}</p>
+                        <div className="p-6 flex flex-col h-full">
+                            <div className="text-center mb-4">
+                                <div className="text-4xl mb-4">{term.icon}</div>
+                                <h1 className="text-2xl font-bold mb-2 text-white">{term.title}</h1>
+                                <p className="text-gray-300 mb-4">{term.description}</p>
+                            </div>
 
-                        {/* Caso de uso */}
-                        <p className="text-left text-gray-700 font-semibold">
-                            📌 Uso recomendado: {term.useCase}
-                        </p>
-                    </div>
+                            {/* Caso de uso */}
+                            <div className="mt-auto">
+                                <p className="text-left text-gray-300 flex items-start">
+                                    <span className="text-blue-400 mr-2">📌</span>
+                                    <span><strong className="text-blue-300">Uso recomendado:</strong> {term.useCase}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
                 ))}
             </div>
         </div>
