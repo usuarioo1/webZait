@@ -79,55 +79,51 @@ export default function Ecommerce() {
                     Todos los planes incluyen las secciones de <strong className="text-white">Sobre nosotros</strong>, <strong className="text-white">Contacto y Productos</strong>.
                 </motion.p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                     {planes.map((plan, index) => (
                         <motion.div
-                        key={plan.nombre}
-                        className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{
-                            duration: 0.8,
-                            delay: index * 0,
-                            type: "spring",
-                            stiffness: 300,
-                            damping: 20
-                        }}
-                        whileHover={{ scale: 1.05 }}
-                    >
-                    
-                            <div className="px-6 py-8 sm:p-10 sm:pb-6 flex-grow">
-                                <h3 className="text-2xl leading-8 font-extrabold text-gray-900 sm:text-3xl sm:leading-9">
-                                    {plan.nombre}
-                                </h3>
-                                <p className="mt-4 text-3xl leading-10 font-extrabold text-indigo-600">
-                                    {plan.precio}
-                                </p>
-                                <ul className="space-y-4 mt-6">
-                                    {plan.caracteristicas.map((caracteristica, index) => (
-                                        <li key={index} className="flex items-start">
-                                            <div className="flex-shrink-0">
-                                                <svg className="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                                </svg>
-                                            </div>
-                                            <p className={`ml-3 text-base leading-6 text-gray-700 ${caracteristica.startsWith("**") ? "font-bold" : ""}`}>
-                                                {caracteristica.replace(/\*\*/g, "")}
-                                            </p>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="mt-auto px-6 pb-6 sm:px-10">
-                                <motion.a
-                                    href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full inline-flex justify-center bg-indigo-600 border border-transparent rounded-md py-3 px-5 text-base leading-6 font-medium text-white hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-75 ease-in-out"
-                                    whileHover={{ scale: 1.1 }}
-                                >
-                                    Seleccionar Plan
-                                </motion.a>
+                            key={plan.nombre}
+                            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:scale-105 flex flex-col"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                        >
+                            <div className="p-6 flex flex-col h-full">
+                                <div className="text-center mb-4">
+                                    <h2 className="text-xl font-bold text-white mb-2">
+                                        {plan.nombre}
+                                    </h2>
+                                    <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-lg font-semibold inline-block">
+                                        {plan.precio}
+                                    </span>
+                                </div>
+
+                                <div className="mb-4 flex-grow">
+                                    <h3 className="text-sm font-semibold text-blue-300 mb-2">
+                                        ✓ Incluye:
+                                    </h3>
+                                    <ul className="space-y-1">
+                                        {plan.caracteristicas.map((caracteristica, idx) => (
+                                            <li key={idx} className="flex items-start text-gray-300 text-sm">
+                                                <span className="text-green-400 mr-2 text-xs">✓</span>
+                                                <span className={caracteristica.startsWith("**") ? "font-bold" : ""}>
+                                                    {caracteristica.replace(/\*\*/g, "")}
+                                                </span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <div className="mt-4">
+                                    <a
+                                        href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full inline-flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300"
+                                    >
+                                        Seleccionar Plan
+                                    </a>
+                                </div>
                             </div>
                         </motion.div>
                     ))}

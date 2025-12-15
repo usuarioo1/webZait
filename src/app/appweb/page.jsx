@@ -5,7 +5,6 @@ export default function AplicacionesWeb() {
     const planes = [
         {
             nombre: "Aplicación Web Básica",
-            precio: "$ Desde 1.500.000",
             caracteristicas: [
                 "Diseño personalizado",
                 "Funciones Personalizadas",
@@ -20,7 +19,6 @@ export default function AplicacionesWeb() {
         },
         {
             nombre: "Aplicación Web Avanzada",
-            precio: "Desde $ 3.000.000",
             caracteristicas: [
                 "Todo lo incluido en el plan básico",
                 "Arquitectura escalable",
@@ -34,73 +32,88 @@ export default function AplicacionesWeb() {
                 "Soporte técnico prioritario por 1 año",
             ],
         },
+        {
+            nombre: "Construcción de APIs",
+            caracteristicas: [
+                "Diseño y arquitectura RESTful",
+                "Desarrollo de APIs a medida",
+                "Documentación técnica completa",
+                "Autenticación y seguridad (JWT, OAuth)",
+                "Endpoints personalizados según necesidades",
+                "Integración con bases de datos",
+                "Versionado de API",
+                "Pruebas unitarias y de integración",
+                "Optimización de rendimiento y caching",
+                "Soporte técnico y mantenimiento",
+            ],
+        },
     ];
 
     return (
-        <div className="bg-gradient-to-b from-purple-100 to-purple-200 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-                <motion.h1 
-                    className="text-4xl font-extrabold text-purple-900 text-center mb-8"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    Aplicaciones Web a Medida
-                </motion.h1>
-                <motion.p 
-                    className="text-xl text-purple-800 text-center max-w-3xl mx-auto mb-12"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    Este es el servicio más flexible, ya que implica desarrollos a medida con funcionalidades específicas que pueden incluir sistemas de usuarios, bases de datos complejas, y funcionalidades avanzadas.
-                </motion.p>
+        <div className="container mx-auto px-4 py-8">
+            <motion.h1 
+                className="mb-6 text-4xl font-bold text-center text-white"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+            >
+                Aplicaciones Web a Medida
+            </motion.h1>
+            <motion.p 
+                className="text-center text-gray-300 mb-8 text-lg"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+            >
+                Este es el servicio más flexible, ya que implica desarrollos a medida con funcionalidades específicas que pueden incluir sistemas de usuarios, bases de datos complejas, y funcionalidades avanzadas.
+            </motion.p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {planes.map((plan, index) => (
-                        <motion.div 
-                            key={plan.nombre} 
-                            className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col"
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.2 }}
-                            whileHover={{ scale: 1.05 }}
-                        >
-                            <div className="px-6 py-8 sm:p-10 sm:pb-6 bg-gradient-to-r from-purple-500 to-indigo-600">
-                                <h3 className="text-2xl leading-8 font-extrabold text-white sm:text-3xl sm:leading-9">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                {planes.map((plan, index) => (
+                    <motion.div 
+                        key={plan.nombre} 
+                        className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:scale-105 flex flex-col"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                    >
+                        <div className="p-6 flex flex-col h-full">
+                            <div className="text-center mb-4">
+                                <h2 className="text-xl font-bold text-white mb-2">
                                     {plan.nombre}
-                                </h3>
-                                <p className="mt-4 text-3xl leading-10 font-extrabold text-white">
-                                    {plan.precio}
-                                </p>
+                                </h2>
                             </div>
-                            <div className="px-6 pt-6 pb-8 sm:px-10 sm:pt-6 sm:pb-8 flex-grow">
-                                <ul className="space-y-4">
+
+                            <div className="mb-4 flex-grow">
+                                <h3 className="text-sm font-semibold text-blue-300 mb-2">
+                                    ✓ Incluye:
+                                </h3>
+                                <ul className="space-y-1">
                                     {plan.caracteristicas.map((caracteristica, idx) => (
-                                        <li key={idx} className="flex items-start">
-                                            <div className="flex-shrink-0">
-                                                <svg className="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                                </svg>
-                                            </div>
-                                            <p className="ml-3 text-base leading-6 text-gray-700">{caracteristica}</p>
+                                        <li key={idx} className="flex items-start text-gray-300 text-sm">
+                                            <span className="text-green-400 mr-2 text-xs">✓</span>
+                                            <span>{caracteristica}</span>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-                            <div className="px-6 pb-6">
+
+                            <div className="mt-4">
                                 <a
-                                    href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}.`}
+                                    href={`https://wa.me/981512691?text=¡Hola!%20Quiero%20cotizar%20el%20servicio%20de%20${encodeURIComponent(plan.nombre)}.`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full inline-flex justify-center items-center bg-gradient-to-r from-purple-500 to-indigo-600 border border-transparent rounded-md py-3 px-5 text-base leading-6 font-medium text-white hover:from-purple-600 hover:to-indigo-700 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out"
+                                    className="w-full inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300"
                                 >
-                                    Solicitar Presupuesto
+                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                    </svg>
+                                    Cotizar Servicio
                                 </a>
                             </div>
-                        </motion.div>
-                    ))}
-                </div>
+                        </div>
+                    </motion.div>
+                ))}
             </div>
         </div>
     );

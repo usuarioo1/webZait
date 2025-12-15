@@ -70,71 +70,67 @@ export default function DesarrolloWeb() {
                 Nuestros Planes
             </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 {planes.map((plan, index) => (
                     <motion.div
                         key={plan.nombre}
-                        className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full"
-                        initial={{ opacity: 0, y: 50 }}
+                        className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:scale-105 flex flex-col"
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.2 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
-                        <div className="p-6 bg-gray-50">
-                            <h3 className="text-2xl font-bold text-gray-800">{plan.nombre}</h3>
-                            <p className="text-3xl font-semibold text-gray-600 mt-2">{plan.precio}</p>
-                        </div>
-                        <div className="p-6 flex-grow">
-                            <ul className="space-y-2 mb-4">
-                                {plan.caracteristicas.map((caracteristica, index) => (
-                                    <motion.li
-                                        key={index}
-                                        className="flex items-center text-gray-700"
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                                    >
-                                        <svg
-                                            className="h-5 w-5 text-green-500 mr-2"
-                                            fill="none"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path d="M5 13l4 4L19 7"></path>
-                                        </svg>
-                                        <span className={caracteristicasComunes.includes(caracteristica) ? "" : "font-bold"}>
-                                            {caracteristica}
-                                        </span>
-                                    </motion.li>
-                                ))}
-                            </ul>
-                        </div>
+                        <div className="p-6 flex flex-col h-full">
+                            <div className="text-center mb-4">
+                                <h2 className="text-xl font-bold text-white mb-2">
+                                    {plan.nombre}
+                                </h2>
+                                <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-lg font-semibold inline-block">
+                                    {plan.precio}
+                                </span>
+                            </div>
 
-                        <div className="p-6 bg-gray-50">
-                            <h4 className="text-lg font-semibold text-gray-800">Ideas</h4>
-                            <ul className="list-disc list-inside text-gray-700 mb-4">
-                                {plan.ideas.map((idea, index) => (
-                                    <motion.li
-                                        key={index}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                                    >
-                                        {idea}
-                                    </motion.li>
-                                ))}
-                            </ul>
+                            <div className="mb-4 flex-grow">
+                                <h3 className="text-sm font-semibold text-blue-300 mb-2">
+                                    ✓ Incluye:
+                                </h3>
+                                <ul className="space-y-1">
+                                    {plan.caracteristicas.map((caracteristica, idx) => (
+                                        <li key={idx} className="flex items-start text-gray-300 text-sm">
+                                            <span className="text-green-400 mr-2 text-xs">✓</span>
+                                            <span className={caracteristicasComunes.includes(caracteristica) ? "" : "font-bold"}>
+                                                {caracteristica}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
 
-                            <a
-                                href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-9 w-full inline-flex justify-center items-center bg-black text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition duration-300"
-                            >
-                                Seleccionar Plan
-                            </a>
+                            {plan.ideas && (
+                                <div className="mt-4 bg-gray-800/50 rounded-lg p-3">
+                                    <h3 className="text-sm font-semibold text-purple-300 mb-2">
+                                        💡 Ideas:
+                                    </h3>
+                                    <ul className="space-y-1">
+                                        {plan.ideas.map((idea, idx) => (
+                                            <li key={idx} className="text-gray-300 text-xs flex items-start">
+                                                <span className="text-purple-400 mr-2">→</span>
+                                                {idea}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            <div className="mt-4">
+                                <a
+                                    href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full inline-flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300"
+                                >
+                                    Seleccionar Plan
+                                </a>
+                            </div>
                         </div>
                     </motion.div>
                 ))}
