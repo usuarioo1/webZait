@@ -1,12 +1,28 @@
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, DM_Sans, Fira_Code } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Head from "next/head";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
+// 🚀 Combo "Innovación Geométrica"
+const plusJakartaSans = Plus_Jakarta_Sans({ 
+  subsets: ["latin"],
+  variable: '--font-heading',
+  display: 'swap',
+});
 
-const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({ 
+  subsets: ["latin"],
+  variable: '--font-body',
+  display: 'swap',
+});
+
+const firaCode = Fira_Code({ 
+  subsets: ["latin"],
+  variable: '--font-code',
+  display: 'swap',
+});
 
 export const metadata = {
   title: "WebZait.cl | Desarrollo y Diseño de Páginas y Aplicaciones Web",
@@ -60,7 +76,7 @@ const jsonLdData = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${plusJakartaSans.variable} ${dmSans.variable} ${firaCode.variable}`}>
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
@@ -72,7 +88,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
         />
       </Head>
-      <body className={inter.className}>
+      <body className="font-body">
         <Navbar />
         {children}
         <Footer />

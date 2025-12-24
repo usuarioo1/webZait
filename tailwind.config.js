@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'heading': ['var(--font-heading)', 'sans-serif'], // Plus Jakarta Sans para títulos
+        'body': ['var(--font-body)', 'sans-serif'], // DM Sans para cuerpo
+        'code': ['var(--font-code)', 'monospace'], // Fira Code para código
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

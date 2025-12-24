@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  @apply bg-black
+body {
+  @apply bg-black font-body;
+}
+
+/* 🚀 Estilos para las fuentes del Combo "Innovación Geométrica" */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading;
+}
+
+code, pre {
+  @apply font-code;
 }
