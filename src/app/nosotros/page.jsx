@@ -13,13 +13,27 @@ export default function AboutUsPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                 >
+                    {/* Foto Personal */}
+                    <motion.div
+                        className="flex justify-center"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        <img 
+                            src="https://res.cloudinary.com/dpbpyzl96/image/upload/v1767054733/me/IMG_20251229_213135_yigsqy.jpg"
+                            alt="Mi foto personal"
+                            className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-xl "
+                        />
+                    </motion.div>
+                    
                     <motion.h1
-                        className="text-4xl font-bold tracking-tight text-white"
+                        className="text-4xl font-bold tracking-tight text-white text-center"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Sobre Nosotros
+                        ¡Hola! 
                     </motion.h1>
                     <motion.p
                         className="text-lg text-white"
@@ -27,7 +41,7 @@ export default function AboutUsPage() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                        Somos una empresa dedicada al desarrollo web y a crear soluciones tecnológicas de vanguardia. Nuestro enfoque está en proporcionar una excelente experiencia de usuario y desarrollar sitios de alto rendimiento adaptados a las necesidades de nuestros clientes.
+                        Soy un desarrollador apasionado por la tecnología y el aprendizaje continuo. Mi curiosidad me impulsa a explorar constantemente nuevas herramientas, frameworks y tecnologías que me permitan crear soluciones innovadoras y eficientes.
                     </motion.p>
                     <motion.p
                         className="text-lg text-white"
@@ -35,7 +49,15 @@ export default function AboutUsPage() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
                     >
-                        Ofrecemos servicios de creación de sitios web corporativos, plataformas para empresas, sitios personales, ecommerce (tiendas en línea), páginas informativas, y mucho más. Nos aseguramos de que cada solución esté optimizada para brindar la mejor experiencia posible.
+                        Me especializo en el desarrollo web full-stack, trabajando tanto con librerías populares como experimentales para encontrar siempre la mejor solución para cada proyecto. Disfruto del diseño y de crear experiencias de usuario excepcionales que combinen estética y funcionalidad.
+                    </motion.p>
+                    <motion.p
+                        className="text-lg text-white"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.7 }}
+                    >
+                        Actualmente estoy expandiendo mis conocimientos en desarrollo blockchain, porque creo firmemente en estar siempre un paso adelante y explorar las tecnologías del futuro.
                     </motion.p>
                 </motion.div>
 
@@ -52,29 +74,57 @@ export default function AboutUsPage() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Nuestros Servicios
+                        Mi Stack Tecnológico
                     </motion.h2>
-                    <motion.ul
-                        className="space-y-4 text-gray-600"
+                    
+                    <motion.div
+                        className="space-y-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                        <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }}>✅ Desarrollo de sitios web corporativos y portales empresariales</motion.li>
-                        <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.5 }}>✅ Creación de tiendas online (ecommerce)</motion.li>
-                        <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.6 }}>✅ Diseño y desarrollo de páginas personales y portafolios profesionales</motion.li>
-                        <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.7 }}>✅ Desarrollo de blogs y plataformas de contenido</motion.li>
-                        <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.8 }}>✅ Implementación de páginas informativas con interfaces intuitivas</motion.li>
-                        <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.9 }}>✅ Creación de aplicaciones web interactivas y dinámicas</motion.li>
-                        <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1 }}>✅ Optimización y mejora de la experiencia de usuario en plataformas existentes</motion.li>
-                    </motion.ul>
+                        <div>
+                            <h3 className="font-semibold text-gray-800 mb-2">⚡ Stack Principal</h3>
+                            <p className="text-gray-600">
+                                <span className="font-medium">Next.js</span> para aplicaciones web modernas y escalables, 
+                                <span className="font-medium"> Prisma</span> como ORM para gestión de bases de datos, y 
+                                <span className="font-medium"> NestJS</span> para backends robustos. También desarrollo APIs desde cero cuando el proyecto lo requiere.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="font-semibold text-gray-800 mb-2">🗄️ Bases de Datos</h3>
+                            <p className="text-gray-600">
+                                Experiencia tanto en <span className="font-medium">SQL</span> (PostgreSQL, MySQL) como <span className="font-medium">NoSQL</span> (MongoDB, Firebase). 
+                                Selecciono la tecnología adecuada según los requerimientos específicos de cada proyecto.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="font-semibold text-gray-800 mb-2">🎨 Diseño & Frontend</h3>
+                            <p className="text-gray-600">
+                                Manejo de las librerías más populares como React, Vue, y herramientas experimentales que me permiten crear interfaces 
+                                únicas y atractivas. Siempre explorando nuevas tendencias en diseño web.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="font-semibold text-gray-800 mb-2">🚀 Actualmente Aprendiendo</h3>
+                            <p className="text-gray-600">
+                                <span className="font-medium">Desarrollo Blockchain</span> - Expandiendo mis habilidades hacia las tecnologías descentralizadas 
+                                y contratos inteligentes para estar preparado para el futuro de la web.
+                            </p>
+                        </div>
+                    </motion.div>
+
                     <motion.p
-                        className="text-gray-600"
+                        className="text-gray-600 pt-4 border-t border-gray-200"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 1.2 }}
                     >
-                        Nuestro objetivo es potenciar tu presencia digital mediante soluciones eficientes y de alto rendimiento, asegurando que cada sitio web se adapte a las necesidades específicas de cada cliente.
+                        💡 Mi filosofía: Aprender constantemente, experimentar con nuevas tecnologías y crear soluciones que realmente aporten valor. 
+                        Cuando trabajas conmigo, trabajas con alguien que se preocupa genuinamente por el éxito de tu proyecto.
                     </motion.p>
                 </motion.div>
             </div>
