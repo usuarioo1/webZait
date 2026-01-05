@@ -1,11 +1,34 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 const Navbar = () => {
+    const detailsRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // Si el clic fue fuera del navbar, cerrar el dropdown de detalles
+            if (detailsRef.current && !detailsRef.current.contains(event.target)) {
+                // Cerrar el details
+                const detailsElement = detailsRef.current.querySelector('details[open]');
+                if (detailsElement) {
+                    detailsElement.removeAttribute('open');
+                }
+            }
+        };
+
+        // Agregar el event listener
+        document.addEventListener('mousedown', handleClickOutside);
+
+        // Limpiar el event listener
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     return (
-        <div className="navbar bg-black">
+        <div className="navbar bg-black" ref={detailsRef}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

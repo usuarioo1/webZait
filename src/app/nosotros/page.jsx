@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { FaBolt, FaDatabase, FaPalette, FaRocket, FaLightbulb } from "react-icons/fa";
 
 export default function AboutUsPage() {
     return (
@@ -84,7 +85,9 @@ export default function AboutUsPage() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
                         <div>
-                            <h3 className="font-semibold text-gray-800 mb-2">⚡ Stack Principal</h3>
+                            <h3 className="font-semibold text-gray-800 mb-2 flex items-center">
+                                <FaBolt className="text-yellow-500 mr-2" /> Stack Principal
+                            </h3>
                             <p className="text-gray-600">
                                 <span className="font-medium">Next.js</span> para aplicaciones web modernas y escalables, 
                                 <span className="font-medium"> Prisma</span> como ORM para gestión de bases de datos, y 
@@ -93,7 +96,9 @@ export default function AboutUsPage() {
                         </div>
 
                         <div>
-                            <h3 className="font-semibold text-gray-800 mb-2">🗄️ Bases de Datos</h3>
+                            <h3 className="font-semibold text-gray-800 mb-2 flex items-center">
+                                <FaDatabase className="text-blue-500 mr-2" /> Bases de Datos
+                            </h3>
                             <p className="text-gray-600">
                                 Experiencia tanto en <span className="font-medium">SQL</span> (PostgreSQL, MySQL) como <span className="font-medium">NoSQL</span> (MongoDB, Firebase). 
                                 Selecciono la tecnología adecuada según los requerimientos específicos de cada proyecto.
@@ -101,7 +106,9 @@ export default function AboutUsPage() {
                         </div>
 
                         <div>
-                            <h3 className="font-semibold text-gray-800 mb-2">🎨 Diseño & Frontend</h3>
+                            <h3 className="font-semibold text-gray-800 mb-2 flex items-center">
+                                <FaPalette className="text-pink-500 mr-2" /> Diseño & Frontend
+                            </h3>
                             <p className="text-gray-600">
                                 Manejo de las librerías más populares como React, Vue, y herramientas experimentales que me permiten crear interfaces 
                                 únicas y atractivas. Siempre explorando nuevas tendencias en diseño web.
@@ -109,7 +116,9 @@ export default function AboutUsPage() {
                         </div>
 
                         <div>
-                            <h3 className="font-semibold text-gray-800 mb-2">🚀 Actualmente Aprendiendo</h3>
+                            <h3 className="font-semibold text-gray-800 mb-2 flex items-center">
+                                <FaRocket className="text-purple-500 mr-2" /> Actualmente Aprendiendo
+                            </h3>
                             <p className="text-gray-600">
                                 <span className="font-medium">Desarrollo Blockchain</span> - Expandiendo mis habilidades hacia las tecnologías descentralizadas 
                                 y contratos inteligentes para estar preparado para el futuro de la web.
@@ -118,13 +127,14 @@ export default function AboutUsPage() {
                     </motion.div>
 
                     <motion.p
-                        className="text-gray-600 pt-4 border-t border-gray-200"
+                        className="text-gray-600 pt-4 border-t border-gray-200 flex items-start"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 1.2 }}
                     >
-                        💡 Mi filosofía: Aprender constantemente, experimentar con nuevas tecnologías y crear soluciones que realmente aporten valor. 
-                        Cuando trabajas conmigo, trabajas con alguien que se preocupa genuinamente por el éxito de tu proyecto.
+                        <FaLightbulb className="text-yellow-500 mr-2 mt-1 flex-shrink-0" />
+                        <span><strong>Mi filosofía:</strong> Aprender constantemente, experimentar con nuevas tecnologías y crear soluciones que realmente aporten valor. 
+                        Cuando trabajas conmigo, trabajas con alguien que se preocupa genuinamente por el éxito de tu proyecto.</span>
                     </motion.p>
                 </motion.div>
             </div>

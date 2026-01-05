@@ -2,13 +2,14 @@
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import { FaLaptopCode, FaShoppingCart, FaRocket, FaBullhorn, FaCheckCircle } from "react-icons/fa";
 
 const services = [
     {
         title: "Desarrollo Web",
         description:
             "Creamos sitios web modernos y responsivos utilizando las últimas tecnologías.",
-        icon: "💻",
+        icon: <FaLaptopCode />,
         link: 'desarrolloWeb',
         details: [
             "Desarrollo de sitios web corporativos y personales.",
@@ -22,7 +23,7 @@ const services = [
         title: "E-commerce",
         description:
             "Diseñamos tiendas Online eficientes y escalables",
-        icon: "🛒",
+        icon: <FaShoppingCart />,
         link: 'ecommerce',
         details: [
             "Creación de tiendas online con procesos de compra simplificados.",
@@ -36,7 +37,7 @@ const services = [
         title: "Apps Web",
         description:
             "Aplicaciones web personalizadas",
-        icon: "🚀",
+        icon: <FaRocket />,
         link: 'appweb',
         details: [
             "Desarrollo de aplicaciones web interactivas y a medida.",
@@ -50,7 +51,7 @@ const services = [
         title: "Marketing Digital",
         description:
             "Campañas publicitarias en Meta (Facebook e Instagram)",
-        icon: "📢",
+        icon: <FaBullhorn />,
         link: 'marketingDigital',
         details: [
             "Configuración profesional de Facebook e Instagram",
@@ -84,20 +85,20 @@ const ServiceCards = () => {
                     >
                         <div className="p-6 flex flex-col h-full">
                             <div className="text-center mb-4">
-                                <div className="text-4xl mb-4">{service.icon}</div>
-                                <h1 className="text-2xl font-bold mb-2 text-white">{service.title}</h1>
+                                <h1 className="text-2xl font-bold mb-4 text-white">{service.title}</h1>
+                                <div className="text-5xl mb-4 flex justify-center text-blue-400">{service.icon}</div>
                                 <p className="text-gray-300 mb-4">{service.description}</p>
                             </div>
                             
                             {/* Lista de detalles específicos */}
                             <div className="mb-4 flex-grow">
-                                <h3 className="text-sm font-semibold text-blue-300 mb-2">
-                                    ✓ Incluye:
+                                <h3 className="text-sm font-semibold text-blue-300 mb-2 flex items-center">
+                                    <FaCheckCircle className="mr-1" /> Incluye:
                                 </h3>
                                 <ul className="text-left space-y-2 mb-4">
                                     {service.details.map((detail, detailIndex) => (
                                         <li key={detailIndex} className="flex items-start text-gray-300 text-sm">
-                                            <span className="text-green-400 mr-2 text-xs">✓</span>
+                                            <span className="text-green-400 mr-2 text-xs mt-1"><FaCheckCircle /></span>
                                             <span>{detail}</span>
                                         </li>
                                     ))}
