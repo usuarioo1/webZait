@@ -55,11 +55,11 @@ const SplitText = ({
     );
 
     return (
-        <p
-    ref={ref}
-    className="split-parent overflow-hidden block text-center text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mt-32"
-    style={{ textAlign, whiteSpace: 'normal', wordWrap: 'break-word' }}
->
+        <h1
+            ref={ref}
+            className="split-parent overflow-hidden block text-center text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mt-32"
+            style={{ textAlign, whiteSpace: 'normal', wordWrap: 'break-word' }}
+        >
 
             {words.map((word, wordIndex) => (
                 <span key={wordIndex} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
@@ -81,7 +81,7 @@ const SplitText = ({
                     <span style={{ display: 'inline-block', width: '0.3em' }}>&nbsp;</span>
                 </span>
             ))}
-        </p>
+        </h1>
     );
 };
 

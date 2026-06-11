@@ -28,7 +28,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className="navbar bg-black" ref={detailsRef}>
+        <nav className="navbar bg-black" ref={detailsRef} aria-label="Navegación principal">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,16 +50,16 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content bg-black rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <li className='text-white'><Link href='/'>Inicio</Link></li>
                         <li>
-                            <a>Servicios</a>
+                            <span>Servicios</span>
                             <ul className="p-2">
-                                <li className='text-white'><Link href='desarrolloWeb'>Sitios Web</Link></li>
-                                <li className='text-white'><Link href='ecommerce'>E-commerce</Link></li>
-                                <li className='text-white'><Link href='appweb'>Aplicaciones Web</Link></li>
-                                <li className='text-white'><Link href='marketingDigital'>Marketing Digital</Link></li>
+                                <li className='text-white'><Link href='/desarrolloWeb'>Sitios Web</Link></li>
+                                <li className='text-white'><Link href='/ecommerce'>E-commerce</Link></li>
+                                <li className='text-white'><Link href='/appweb'>Aplicaciones Web</Link></li>
+                                <li className='text-white'><Link href='/marketingDigital'>Marketing Digital</Link></li>
                             </ul>
                         </li>
-                        <li className='text-white' ><Link href='nosotros'>Sobre nosotros</Link></li>
-                        <li className='text-white'><Link href='contacto'>Contacto</Link></li>
+                        <li className='text-white' ><Link href='/nosotros'>Sobre nosotros</Link></li>
+                        <li className='text-white'><Link href='/contacto'>Contacto</Link></li>
                     </ul>
                 </div>
                 <Link href='/' className="flex items-center space-x-2">
@@ -76,28 +76,26 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <Link href='/'>
-                        <li><p className='text-2xl text-white'>Inicio</p></li>
-                    </Link>
+                    <li><Link href='/' className='text-2xl text-white'>Inicio</Link></li>
                     <li>
                         <details>
                             <summary className='text-2xl text-white'>Servicios</summary>
                             <ul className="p-2 bg-black w-48">
-                                <li className='text-white'><Link href='desarrolloWeb'>Sitios Web</Link></li>
-                                <li className='text-white'><Link href='ecommerce'>E-commerce</Link></li>
-                                <li className='text-white'><Link href='appweb'>Aplicaciones Web</Link></li>
-                                <li className='text-white'><Link href='marketingDigital'>Marketing Digital</Link></li>
+                                <li className='text-white'><Link href='/desarrolloWeb'>Sitios Web</Link></li>
+                                <li className='text-white'><Link href='/ecommerce'>E-commerce</Link></li>
+                                <li className='text-white'><Link href='/appweb'>Aplicaciones Web</Link></li>
+                                <li className='text-white'><Link href='/marketingDigital'>Marketing Digital</Link></li>
                             </ul>
                         </details>
                     </li>
-                    <Link href={'nosotros'}><li><p className='text-2xl text-white '>Sobre Nosotros</p></li></Link>
-                    <Link href='contacto'><li><p className='text-2xl text-white'>Contacto</p></li></Link>
+                    <li><Link href='/nosotros' className='text-2xl text-white'>Sobre Nosotros</Link></li>
+                    <li><Link href='/contacto' className='text-2xl text-white'>Contacto</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">
                 {/* <a className="btn">Button</a> */}
             </div>
-        </div>
+        </nav>
     )
 }
 

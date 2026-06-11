@@ -2,7 +2,6 @@ import { Plus_Jakarta_Sans, DM_Sans, Fira_Code } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Head from "next/head";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 // 🚀 Combo "Innovación Geométrica"
@@ -25,8 +24,32 @@ const firaCode = Fira_Code({
 });
 
 export const metadata = {
-  title: "WebZait.cl | Desarrollo y Diseño de Páginas y Aplicaciones Web",
+  metadataBase: new URL("https://webzait.cl"),
+  title: {
+    default: "Desarrollo Web en Chile | WebZait",
+    template: "%s | WebZait",
+  },
   description: "Especialistas en crear sitios web de alto rendimiento, tiendas online, y aplicaciones web personalizadas para negocios y emprendedores.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_CL",
+    url: "/",
+    siteName: "WebZait",
+    title: "Desarrollo Web en Chile | WebZait",
+    description: "Sitios web, tiendas online y aplicaciones web personalizadas para negocios y emprendedores en Chile.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Desarrollo Web en Chile | WebZait",
+    description: "Sitios web, tiendas online y aplicaciones web personalizadas para negocios y emprendedores en Chile.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   keywords: [
     "desarrollo web profesional",
     "diseño de páginas web modernas",
@@ -49,51 +72,54 @@ export const metadata = {
 
 const jsonLdData = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "WebZait",
-  "url": "https://webzait.cl",
-  "logo": "./favicon.ico",
-  "description": "Sitios Web de alto rendimiento, tiendas online y aplicaciones web personalizadas.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Calle Ejemplo 123",
-    "addressLocality": "Santiago",
-    "addressRegion": "Región Metropolitana",
-    "postalCode": "8910090",
-    "addressCountry": "CL"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+56-981512691",
-    "contactType": "Customer Service"
-  }
-  // "sameAs": [
-  //   "https://www.facebook.com/WebZait",
-  //   "https://www.twitter.com/WebZait",
-  //   "https://www.instagram.com/WebZait"
-  // ]
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://webzait.cl/#business",
+      "name": "WebZait",
+      "url": "https://webzait.cl",
+      "logo": "https://webzait.cl/favicon.ico",
+      "image": "https://webzait.cl/opengraph-image",
+      "description": "Desarrollo de sitios web, tiendas online y aplicaciones web personalizadas para negocios y emprendedores.",
+      "email": "mailto:webzaitcl@gmail.com",
+      "telephone": "+56981512691",
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      },
+      "sameAs": [
+        "https://www.instagram.com/webzait.cl"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://webzait.cl/#website",
+      "url": "https://webzait.cl",
+      "name": "WebZait",
+      "inLanguage": "es-CL",
+      "publisher": {
+        "@id": "https://webzait.cl/#business"
+      }
+    }
+  ]
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${plusJakartaSans.variable} ${dmSans.variable} ${firaCode.variable}`}>
-      <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords.join(", ")} />
-        <link rel="canonical" href="https://webzait.cl" />
-        {/* Script JSON-LD */}
+      <body className="font-body">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
         />
-      </Head>
-      <body className="font-body">
         <Navbar />
-        {children}
+        <main>{children}</main>
         <Footer />
+        {process.env.NEXT_PUBLIC_GOOGLE && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE} />
+        )}
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE} />
     </html>
   );
 }

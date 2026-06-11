@@ -116,7 +116,7 @@ export default function Ecommerce() {
 
                                 <div className="mt-4">
                                     <a
-                                        href={`https://wa.me/981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
+                                        href={`https://wa.me/56981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-full inline-flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300"

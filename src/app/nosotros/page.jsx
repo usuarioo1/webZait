@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaBolt, FaDatabase, FaPalette, FaRocket, FaLightbulb } from "react-icons/fa";
+import Image from "next/image";
 
 export default function AboutUsPage() {
     return (
@@ -21,9 +22,12 @@ export default function AboutUsPage() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <img 
+                        <Image
                             src="https://res.cloudinary.com/dpbpyzl96/image/upload/v1767054733/me/IMG_20251229_213135_yigsqy.jpg"
-                            alt="Mi foto personal"
+                            alt="Desarrollador de WebZait"
+                            width={224}
+                            height={224}
+                            sizes="(min-width: 768px) 224px, 192px"
                             className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-xl "
                         />
                     </motion.div>
@@ -34,7 +38,7 @@ export default function AboutUsPage() {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6 }}
                     >
-                        ¡Hola! 
+                        Desarrollo web con enfoque personalizado
                     </motion.h1>
                     <motion.p
                         className="text-lg text-white"

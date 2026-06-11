@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { FaBitcoin, FaEthereum } from "react-icons/fa"
 import { SiChainlink } from "react-icons/si"
 
@@ -15,10 +16,13 @@ export default function Footer() {
                         </p>
                     </div>
                     <div className="flex justify-center">
-                        <img
+                        <Image
                             src="https://res.cloudinary.com/dpbpyzl96/image/upload/v1727738308/apweb/uaon8rdv9yujayialvro.png"
                             alt="logo Mercado Pago"
-                            className="h-26"
+                            width={220}
+                            height={80}
+                            sizes="220px"
+                            className="h-auto w-52"
                         />
                     </div>
                     <div className="col-span-1 sm:col-span-2 lg:col-span-2">
@@ -39,6 +43,19 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
+                <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+                    <Link href="/contacto" className="hover:text-white">Solicitar cotización</Link>
+                    <a href="mailto:webzaitcl@gmail.com" className="hover:text-white">webzaitcl@gmail.com</a>
+                    <a
+                        href="https://www.instagram.com/webzait.cl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-white"
+                    >
+                        Instagram
+                    </a>
+                    <span>Servicios disponibles en Chile</span>
+                </div>
                 <div className="mt-8 border-t border-gray-800 pt-8 text-center">
                     <p className="text-gray-400">© {new Date().getFullYear()} WebZait. Todos los derechos reservados.</p>
                 </div>
@@ -46,4 +63,3 @@ export default function Footer() {
         </footer>
     )
 }
-

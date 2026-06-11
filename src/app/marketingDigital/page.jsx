@@ -221,7 +221,7 @@ export default function MarketingDigital() {
                         </div>
                         <span>La inversión publicitaria en <strong className="text-blue-300">Meta</strong> se paga directamente a <strong className="text-blue-300">Facebook/Instagram</strong></span>
                     </li>
-                    <li>• Recomendamos presupuestos mínimos de $50.000-$100.000 COP mensuales para resultados óptimos</li>
+                    <li>• Recomendamos presupuestos mínimos de $50.000-$100.000 CLP mensuales para resultados óptimos</li>
                     <li>• Todos los servicios incluyen capacitación y reportes detallados</li>
                 </ul>
             </motion.div>

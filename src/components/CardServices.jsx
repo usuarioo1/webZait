@@ -85,7 +85,7 @@ const ServiceCards = () => {
                     >
                         <div className="p-6 flex flex-col h-full">
                             <div className="text-center mb-4">
-                                <h1 className="text-2xl font-bold mb-4 text-white">{service.title}</h1>
+                                <h3 className="text-2xl font-bold mb-4 text-white">{service.title}</h3>
                                 <div className="text-5xl mb-4 flex justify-center text-blue-400">{service.icon}</div>
                                 <p className="text-gray-300 mb-4">{service.description}</p>
                             </div>
@@ -106,10 +106,11 @@ const ServiceCards = () => {
                             </div>
             
                             <div className="mt-auto">
-                                <Link href={`/${service.link}`}>
-                                    <button className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-200">
-                                        Más información
-                                    </button>
+                                <Link
+                                    href={`/${service.link}`}
+                                    className="block w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-center rounded-md transition-colors duration-200"
+                                >
+                                    Más información
                                 </Link>
                             </div>
                         </div>

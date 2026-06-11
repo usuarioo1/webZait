@@ -100,7 +100,7 @@ export default function AplicacionesWeb() {
 
                             <div className="mt-4">
                                 <a
-                                    href={`https://wa.me/981512691?text=¡Hola!%20Quiero%20cotizar%20el%20servicio%20de%20${encodeURIComponent(plan.nombre)}.`}
+                                    href={`https://wa.me/56981512691?text=¡Hola!%20Quiero%20cotizar%20el%20servicio%20de%20${encodeURIComponent(plan.nombre)}.`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300"
