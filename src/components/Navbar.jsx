@@ -27,11 +27,13 @@ const Navbar = () => {
         };
     }, []);
 
+    const linkClass = "text-base font-medium text-white/80 transition-colors duration-200 hover:text-white";
+
     return (
-        <nav className="navbar bg-black" ref={detailsRef} aria-label="Navegación principal">
+        <nav className="navbar sticky top-0 z-50 border-b border-white/5 bg-black/80 backdrop-blur-md" ref={detailsRef} aria-label="Navegación principal">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden" aria-label="Abrir menú">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -47,53 +49,56 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-black rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li className='text-white'><Link href='/'>Inicio</Link></li>
+                        className="menu menu-sm dropdown-content mt-3 w-52 rounded-box border border-white/10 bg-gray-900/95 p-2 shadow-xl backdrop-blur-md">
+                        <li><Link href='/' className='text-white'>Inicio</Link></li>
                         <li>
-                            <span>Servicios</span>
+                            <span className="text-white">Servicios</span>
                             <ul className="p-2">
-                                <li className='text-white'><Link href='/desarrolloWeb'>Sitios Web</Link></li>
-                                <li className='text-white'><Link href='/ecommerce'>E-commerce</Link></li>
-                                <li className='text-white'><Link href='/appweb'>Aplicaciones Web</Link></li>
-                                <li className='text-white'><Link href='/marketingDigital'>Marketing Digital</Link></li>
+                                <li><Link href='/desarrolloWeb' className='text-white'>Sitios Web</Link></li>
+                                <li><Link href='/ecommerce' className='text-white'>E-commerce</Link></li>
+                                <li><Link href='/appweb' className='text-white'>Aplicaciones Web</Link></li>
+                                <li><Link href='/marketingDigital' className='text-white'>Marketing Digital</Link></li>
                             </ul>
                         </li>
-                        <li className='text-white' ><Link href='/nosotros'>Sobre nosotros</Link></li>
-                        <li className='text-white'><Link href='/contacto'>Contacto</Link></li>
+                        <li><Link href='/nosotros'>Sobre nosotros</Link></li>
+                        <li><Link href='/contacto'>Contacto</Link></li>
                     </ul>
                 </div>
-                <Link href='/' className="flex items-center space-x-2">
+                <Link href='/' className="flex items-center space-x-2.5">
                     <Image
                         src="https://res.cloudinary.com/dpbpyzl96/image/upload/v1732492473/iWEB/h6yxpbcsbxg36wsbdrwq.ico"
                         alt="WebZait Logo"
-                        width={32}
-                        height={32}
-                        className="h-20 w-24 rounded-full"
+                        width={40}
+                        height={40}
+                        priority
+                        className="h-10 w-10 rounded-full"
                     />
                     {/* Texto visible solo en pantallas grandes */}
-                    <span className="hidden lg:block text-2xl text-white">WebZait</span>
+                    <span className="hidden font-heading text-xl font-bold tracking-tight text-white lg:block">WebZait</span>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li><Link href='/' className='text-2xl text-white'>Inicio</Link></li>
+                <ul className="menu menu-horizontal gap-1 px-1">
+                    <li><Link href='/' className={linkClass}>Inicio</Link></li>
                     <li>
                         <details>
-                            <summary className='text-2xl text-white'>Servicios</summary>
-                            <ul className="p-2 bg-black w-48">
-                                <li className='text-white'><Link href='/desarrolloWeb'>Sitios Web</Link></li>
-                                <li className='text-white'><Link href='/ecommerce'>E-commerce</Link></li>
-                                <li className='text-white'><Link href='/appweb'>Aplicaciones Web</Link></li>
-                                <li className='text-white'><Link href='/marketingDigital'>Marketing Digital</Link></li>
+                            <summary className={linkClass}>Servicios</summary>
+                            <ul className="mt-2 w-48 rounded-box border border-white/10 bg-gray-900/95 p-2 shadow-xl backdrop-blur-md">
+                                <li><Link href='/desarrolloWeb' className='text-white/80 hover:text-white'>Sitios Web</Link></li>
+                                <li><Link href='/ecommerce' className='text-white/80 hover:text-white'>E-commerce</Link></li>
+                                <li><Link href='/appweb' className='text-white/80 hover:text-white'>Aplicaciones Web</Link></li>
+                                <li><Link href='/marketingDigital' className='text-white/80 hover:text-white'>Marketing Digital</Link></li>
                             </ul>
                         </details>
                     </li>
-                    <li><Link href='/nosotros' className='text-2xl text-white'>Sobre Nosotros</Link></li>
-                    <li><Link href='/contacto' className='text-2xl text-white'>Contacto</Link></li>
+                    <li><Link href='/nosotros' className={linkClass}>Sobre Nosotros</Link></li>
+                    <li><Link href='/contacto' className={linkClass}>Contacto</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">
-                {/* <a className="btn">Button</a> */}
+                <Link href="/contacto" className="btn-primary hidden px-5 py-2 text-sm lg:inline-flex">
+                    Cotizar proyecto
+                </Link>
             </div>
         </nav>
     )

@@ -27,7 +27,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* Información de contacto */}
-                    <div className="space-y-4 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-6">
                         <h3 className="text-xl font-semibold text-white mb-4">Información de contacto</h3>
                         <div className="flex items-center gap-3 text-gray-300">
                             <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,7 +81,7 @@ export default function ContactPage() {
 
                 {/* Columna derecha - Formulario de contacto mejorado */}
                 <motion.div 
-                    className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl p-8 border border-gray-700"
+                    className="rounded-2xl border border-white/10 bg-gradient-to-br from-gray-800/80 to-gray-900 p-8 shadow-xl shadow-black/40"
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
@@ -101,7 +101,7 @@ export default function ContactPage() {
                                 id="name"
                                 name="name"
                                 required
-                                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                className="w-full px-4 py-3 bg-gray-900/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                                 placeholder="Juan Pérez"
                             />
                         </div>
@@ -115,7 +115,7 @@ export default function ContactPage() {
                                 id="email"
                                 name="email"
                                 required
-                                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                className="w-full px-4 py-3 bg-gray-900/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                                 placeholder="juan@ejemplo.com"
                             />
                         </div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                                 type="tel"
                                 id="phone"
                                 name="phone"
-                                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                className="w-full px-4 py-3 bg-gray-900/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                                 placeholder="+56 9 1234 5678"
                             />
                         </div>
@@ -142,7 +142,7 @@ export default function ContactPage() {
                                 id="subject"
                                 name="subject"
                                 required
-                                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                className="w-full px-4 py-3 bg-gray-900/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                                 placeholder="¿En qué podemos ayudarte?"
                             />
                         </div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                                 name="message"
                                 rows={5}
                                 required
-                                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                                className="w-full px-4 py-3 bg-gray-900/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
                                 placeholder="Cuéntanos más sobre tu proyecto..."
                             ></textarea>
                         </div>

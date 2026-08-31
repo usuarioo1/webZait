@@ -1,8 +1,8 @@
 'use client';
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 import metaLogo from "@/assets/meta.png";
+import { FaCheckCircle, FaBullseye, FaLightbulb, FaWhatsapp } from "react-icons/fa";
 
 // Componentes de iconos de redes sociales
 const InstagramIcon = ({ className = "w-6 h-6" }) => (
@@ -57,7 +57,7 @@ export default function MarketingDigital() {
                 "Diseño de 3-5 piezas publicitarias",
                 "Campaña optimizada para alcance",
                 "Segmentación demográfica y geográfica",
-                
+
                 "Reporte semanal de métricas",
                 "Optimización continua durante el mes",
                 "Duración: 1 mes",
@@ -81,7 +81,7 @@ export default function MarketingDigital() {
                 "Campaña optimizada para clics al sitio web",
                 "Segmentación por intereses y comportamientos",
                 "Retargeting de visitantes web",
-                
+
                 "Reporte semanal de métricas",
                 "Optimización continua durante el mes",
                 "Duración: 1 mes",
@@ -105,8 +105,8 @@ export default function MarketingDigital() {
                 "Diseño de 5-8 piezas publicitarias (A/B testing)",
                 "Campaña optimizada para conversiones",
                 "Segmentación avanzada por intención de compra",
-            
-               
+
+
                 "Reporte semanal detallado de métricas y ROI",
                 "Optimización continua durante el mes",
                 "Duración: 1 mes",
@@ -151,180 +151,179 @@ export default function MarketingDigital() {
     ];
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <motion.h1
-                className="mb-6 text-4xl font-bold text-center text-white"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+        <div className="section-shell py-16 sm:py-20">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                Marketing Digital - Campañas Publicitarias
-            </motion.h1>
-
-            <motion.p
-                className="text-center text-gray-300 mb-4 text-lg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-            >
-                Potencia tu presencia digital con campañas estratégicas en Meta (Facebook e Instagram)
-            </motion.p>
+                <h1 className="text-center text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                    Marketing Digital - Campañas Publicitarias
+                </h1>
+                <div className="section-accent" />
+                <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-relaxed text-gray-300">
+                    Potencia tu presencia digital con campañas estratégicas en Meta (Facebook e Instagram)
+                </p>
+            </motion.div>
 
             {/* Logos de plataformas */}
             <motion.div
-                className="flex justify-center items-center gap-6 mb-8"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 mt-8"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
             >
-                <div className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 rounded-full">
-                    <InstagramIcon className="w-6 h-6 text-white" />
-                    <span className="text-white font-semibold">Instagram</span>
+                <div className="flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2">
+                    <InstagramIcon className="w-5 h-5 text-white" />
+                    <span className="text-sm font-semibold text-white">Instagram</span>
                 </div>
-                <div className="flex items-center gap-2 bg-blue-600 px-4 py-2 rounded-full">
-                    <FacebookIcon className="w-6 h-6 text-white" />
-                    <span className="text-white font-semibold">Facebook</span>
+                <div className="flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2">
+                    <FacebookIcon className="w-5 h-5 text-white" />
+                    <span className="text-sm font-semibold text-white">Facebook</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg"> 
-                    <Image src={metaLogo} alt="Meta" className="h-6 w-auto object-contain" />
-                    <span className="text-gray-900 font-semibold">META</span>
+                <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-lg">
+                    <Image src={metaLogo} alt="Meta" className="h-5 w-auto object-contain" />
+                    <span className="text-sm font-semibold text-gray-900">META</span>
                 </div>
             </motion.div>
 
             {/* Nota sobre inversión publicitaria */}
             <motion.div
-                className="bg-blue-900/30 border border-blue-500 rounded-lg p-6 mb-8"
+                className="mt-10 rounded-2xl border border-blue-500/30 bg-blue-950/30 p-6"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
             >
-                <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-2xl font-semibold text-blue-300">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <h2 className="text-xl font-semibold text-blue-300 sm:text-2xl">
                         Información Importante
-                    </h3>
+                    </h2>
                     <div className="flex gap-2">
-                        <div className="bg-white rounded-full p-1">
-                            <MetaIcon className="w-5 h-5" />
+                        <div className="rounded-full bg-white p-1">
+                            <MetaIcon className="w-4 h-4" />
                         </div>
-                        <FacebookIcon className="w-5 h-5 text-blue-400" />
-                        <InstagramIcon className="w-5 h-5 text-blue-400" />
+                        <FacebookIcon className="w-4 h-4 text-blue-400" />
+                        <InstagramIcon className="w-4 h-4 text-blue-400" />
                     </div>
                 </div>
-                <ul className="text-gray-300 space-y-2">
+                <ul className="space-y-2.5 text-gray-300">
                     <li className="flex items-start gap-2">
-                        <span>•</span>
+                        <span className="text-blue-400">•</span>
                         <span>Los precios mostrados son por el servicio de gestión y configuración</span>
                     </li>
                     <li className="flex items-start gap-2">
-                        <div className="bg-white rounded-full p-1 flex-shrink-0 mt-0.5">
-                            <MetaIcon className="w-5 h-5" />
-                        </div>
+                        <span className="text-blue-400">•</span>
                         <span>La inversión publicitaria en <strong className="text-blue-300">Meta</strong> se paga directamente a <strong className="text-blue-300">Facebook/Instagram</strong></span>
                     </li>
-                    <li>• Recomendamos presupuestos mínimos de $50.000-$100.000 CLP mensuales para resultados óptimos</li>
-                    <li>• Todos los servicios incluyen capacitación y reportes detallados</li>
+                    <li className="flex items-start gap-2">
+                        <span className="text-blue-400">•</span>
+                        <span>Recomendamos presupuestos mínimos de $50.000-$100.000 CLP mensuales para resultados óptimos</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                        <span className="text-blue-400">•</span>
+                        <span>Todos los servicios incluyen capacitación y reportes detallados</span>
+                    </li>
                 </ul>
             </motion.div>
 
             {/* Servicios */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {servicios.map((servicio, index) => (
-                    <motion.div
+                    <motion.article
                         key={servicio.nombre}
-                        className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:scale-105 flex flex-col"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        className="card-surface card-surface-hover flex flex-col p-6"
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
                     >
-                        <div className="p-6 flex flex-col h-full">
-                            <div className="text-center mb-4">
-                                <h2 className="text-xl font-bold text-white mb-2">
-                                    {servicio.nombre}
-                                </h2>
-                                <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-lg font-semibold inline-block">
-                                    {servicio.precio}
-                                </span>
-                            </div>
-
-                            <p className="text-gray-300 mb-4 text-sm italic text-center">
+                        <div className="text-center">
+                            <h2 className="text-xl font-bold text-white">{servicio.nombre}</h2>
+                            <span className="mt-3 inline-block rounded-full bg-blue-600 px-4 py-1.5 text-base font-semibold text-white shadow-lg shadow-blue-950/40">
+                                {servicio.precio}
+                            </span>
+                            <p className="mt-3 text-sm italic text-gray-400">
                                 {servicio.descripcion}
                             </p>
+                        </div>
 
-                            <div className="mb-4 flex-grow">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <h3 className="text-sm font-semibold text-blue-300">
-                                        Incluye:
-                                    </h3>
-                                    {(servicio.nombre.includes('Reconocimiento') || servicio.nombre.includes('Interacción')) && (
-                                        <div className="flex gap-1">
-                                            <InstagramIcon className="w-4 h-4 text-pink-400" />
-                                            <FacebookIcon className="w-4 h-4 text-blue-400" />
-                                        </div>
-                                    )}
-                                </div>
-                                <ul className="space-y-1">
-                                    {servicio.caracteristicas.map((caracteristica, idx) => (
-                                        <li
-                                            key={idx}
-                                            className="flex items-start text-gray-300 text-sm"
-                                        >
-                                            <span className="text-green-400 mr-2 text-xs">✓</span>
+                        <div className="mt-5 flex-grow">
+                            <div className="flex items-center justify-between gap-2">
+                                <h3 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-300">
+                                    <FaCheckCircle className="text-sm text-blue-400" /> Incluye
+                                </h3>
+                                {(servicio.nombre.includes('Reconocimiento') || servicio.nombre.includes('Interacción')) && (
+                                    <div className="flex gap-1.5">
+                                        <InstagramIcon className="w-4 h-4 text-pink-400" />
+                                        <FacebookIcon className="w-4 h-4 text-blue-400" />
+                                    </div>
+                                )}
+                            </div>
+                            <ul className="mt-3 space-y-2">
+                                {servicio.caracteristicas.map((caracteristica, idx) => (
+                                    caracteristica && (
+                                        <li key={idx} className="check-item">
+                                            <FaCheckCircle className="check-icon" />
                                             <span>{caracteristica}</span>
+                                        </li>
+                                    )
+                                ))}
+                            </ul>
+                        </div>
+
+                        {servicio.objetivos && (
+                            <div className="mt-5 rounded-xl border border-white/10 bg-white/5 p-4">
+                                <h3 className="flex items-center gap-2 text-sm font-semibold text-purple-300">
+                                    <FaBullseye className="text-purple-400" /> Objetivos
+                                </h3>
+                                <ul className="mt-2.5 space-y-1.5">
+                                    {servicio.objetivos.map((objetivo, idx) => (
+                                        <li key={idx} className="flex items-start gap-2 text-xs text-gray-300">
+                                            <span className="mt-1 text-purple-400">→</span>
+                                            {objetivo}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
+                        )}
 
-                            {servicio.objetivos && (
-                                <div className="mt-4 bg-gray-800/50 rounded-lg p-3">
-                                    <h3 className="text-sm font-semibold text-purple-300 mb-2">
-                                        🎯 Objetivos:
-                                    </h3>
-                                    <ul className="space-y-1">
-                                        {servicio.objetivos.map((objetivo, idx) => (
-                                            <li key={idx} className="text-gray-300 text-xs flex items-start">
-                                                <span className="text-purple-400 mr-2">→</span>
-                                                {objetivo}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            {servicio.buenasPracticas && (
-                                <div className="mt-4 bg-green-900/20 rounded-lg p-3 border border-green-700">
-                                    <h3 className="text-sm font-semibold text-green-300 mb-2">
-                                        💡 Buenas Prácticas:
-                                    </h3>
-                                    <ul className="space-y-1">
-                                        {servicio.buenasPracticas.map((practica, idx) => (
-                                            <li key={idx} className="text-gray-300 text-xs flex items-start">
-                                                <span className="text-green-400 mr-2">✓</span>
-                                                {practica}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-                        </div>
-                    </motion.div>
+                        {servicio.buenasPracticas && (
+                            <div className="mt-5 rounded-xl border border-green-700/40 bg-green-950/20 p-4">
+                                <h3 className="flex items-center gap-2 text-sm font-semibold text-green-300">
+                                    <FaLightbulb className="text-green-400" /> Buenas Prácticas
+                                </h3>
+                                <ul className="mt-2.5 space-y-1.5">
+                                    {servicio.buenasPracticas.map((practica, idx) => (
+                                        <li key={idx} className="flex items-start gap-2 text-xs text-gray-300">
+                                            <FaCheckCircle className="mt-0.5 shrink-0 text-[10px] text-green-400" />
+                                            {practica}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </motion.article>
                 ))}
             </div>
 
             {/* Servicios adicionales */}
             <motion.div
-                className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-lg p-6 mb-8 border border-purple-500"
+                className="mt-12 rounded-2xl border border-purple-500/30 bg-gradient-to-br from-purple-950/30 to-blue-950/30 p-6 sm:p-8"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
             >
-                <h2 className="text-2xl font-bold text-white mb-4">
+                <h2 className="text-2xl font-bold text-white">
                     Servicios Adicionales Disponibles
                 </h2>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <ul className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2">
                     {serviciosAdicionales.map((servicio, idx) => (
                         <li key={idx} className="flex items-start text-gray-300">
-                            <span className="text-purple-400 mr-2">+</span>
+                            <span className="mr-2 text-purple-400">+</span>
                             {servicio}
                         </li>
                     ))}
@@ -333,50 +332,50 @@ export default function MarketingDigital() {
 
             {/* CTA */}
             <motion.div
-                className="text-center"
+                className="mt-16 text-center"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
             >
-                <p className="text-gray-300 mb-6 text-lg font-semibold">
+                <p className="text-lg font-semibold text-white">
                     ¿Listo para impulsar tu negocio en redes sociales?
                 </p>
-                <p className="text-gray-400 mb-8 text-base">
+                <p className="mt-2 text-gray-400">
                     Contáctanos directamente y comienza a hacer crecer tu marca hoy mismo
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
                     <a
                         href="https://wa.me/56981512691?text=Hola,%20me%20interesa%20contratar%20servicios%20de%20Marketing%20Digital%20en%20Meta%20(Facebook%20e%20Instagram)"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 shadow-lg hover:shadow-green-500/50 hover:scale-105"
+                        className="inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-green-500 to-green-600 px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-[1.03] hover:from-green-600 hover:to-green-700 hover:shadow-green-500/40"
                     >
-                        <svg className="w-7 h-7 group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                        </svg>
-                        <span className="text-lg">Escríbenos por WhatsApp</span>
+                        <FaWhatsapp className="text-2xl" />
+                        <span className="whitespace-nowrap">Escríbenos por WhatsApp</span>
                     </a>
                     <a
                         href="https://www.instagram.com/webzait.cl"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 shadow-lg hover:shadow-pink-500/50 hover:scale-105"
+                        className="inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 px-8 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-pink-500/40"
                     >
-                        <InstagramIcon className="w-7 h-7 group-hover:rotate-12 transition-transform" />
-                        <span className="text-lg">Síguenos en Instagram</span>
+                        <InstagramIcon className="text-2xl" />
+                        <span className="whitespace-nowrap">Síguenos en Instagram</span>
                     </a>
                 </div>
-                <p className="text-gray-500 mt-6 text-sm">
+                <p className="mt-6 text-sm text-gray-500">
                     @webzait.cl - Respuesta inmediata en horario laboral
                 </p>
             </motion.div>
 
             {/* Footer note */}
             <motion.div
-                className="mt-12 text-center text-gray-400 text-sm"
+                className="mt-12 text-center text-sm text-gray-500"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
             >
                 <p>* Los resultados pueden variar según el sector, audiencia y presupuesto invertido</p>
                 <p>* Servicios incluyen soporte durante la duración de la campaña</p>

@@ -1,6 +1,12 @@
 'use client';
 import { motion } from 'framer-motion';
-import Link from "next/link";
+import { FaCheckCircle, FaExternalLinkAlt, FaLightbulb, FaArrowRight } from "react-icons/fa";
+
+const fadeUp = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+};
 
 export default function DesarrolloWeb() {
     const caracteristicasComunes = [
@@ -41,132 +47,123 @@ export default function DesarrolloWeb() {
         },
     ];
 
-    return (
-        <div className="container mx-auto px-4 py-8">
-            <motion.h1
-                className="mb-6 text-4xl font-bold text-center text-white"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-            >
-                Desarrollo Web
-            </motion.h1>
-            <motion.p
-                className="mb-8 text-lg text-center max-w-3xl mx-auto text-gray-200"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-            >
-                Son sitios simples y directos, normalmente de una sola página, con un diseño limpio y lo esencial: como enlaces a tus redes sociales. Botones de contacto directo. Perfectos para pequeños negocios o proyectos personales que buscan tener presencia online sin complicaciones.
-            </motion.p>
+    const ejemplos = [
+        { label: "Landing Page ejemplo", href: "https://landing-ejemplo-chocolateria.vercel.app/" },
+        { label: "Cv Online", href: "https://cv-test-two.vercel.app/" },
+        { label: "Portafolio Fotografía", href: "https://gallery-photography.vercel.app/" },
+    ];
 
+    return (
+        <div className="section-shell py-16 sm:py-20">
+            <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
+                <h1 className="text-center text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                    Desarrollo Web
+                </h1>
+                <div className="section-accent" />
+                <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-relaxed text-gray-300">
+                    Son sitios simples y directos, normalmente de una sola página, con un diseño limpio y lo esencial: como enlaces a tus redes sociales. Botones de contacto directo. Perfectos para pequeños negocios o proyectos personales que buscan tener presencia online sin complicaciones.
+                </p>
+            </motion.div>
 
             <motion.h2
-                className="mb-6 text-3xl font-semibold text-center text-white"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                className="mt-16 text-center text-2xl font-bold tracking-tight text-white sm:text-3xl"
+                {...fadeUp}
+                transition={{ duration: 0.6 }}
             >
                 Nuestros Planes
             </motion.h2>
+            <motion.div className="section-accent" {...fadeUp} transition={{ duration: 0.6, delay: 0.15 }} />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
                 {planes.map((plan, index) => (
-                    <motion.div
+                    <motion.article
                         key={plan.nombre}
-                        className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:scale-105 flex flex-col"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        className="card-surface card-surface-hover flex flex-col p-6 sm:p-8"
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
-                        <div className="p-6 flex flex-col h-full">
-                            <div className="text-center mb-4">
-                                <h2 className="text-xl font-bold text-white mb-2">
-                                    {plan.nombre}
-                                </h2>
-                                <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-lg font-semibold inline-block">
-                                    {plan.precio}
-                                </span>
-                            </div>
+                        <div className="text-center">
+                            <h2 className="text-xl font-bold text-white">{plan.nombre}</h2>
+                            <span className="mt-3 inline-block rounded-full bg-blue-600 px-5 py-1.5 text-lg font-semibold text-white shadow-lg shadow-blue-950/40">
+                                {plan.precio}
+                            </span>
+                        </div>
 
-                            <div className="mb-4 flex-grow">
-                                <h3 className="text-sm font-semibold text-blue-300 mb-2">
-                                    ✓ Incluye:
+                        <div className="mt-6 flex-grow">
+                            <h3 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-300">
+                                <FaCheckCircle className="text-sm text-blue-400" /> Incluye
+                            </h3>
+                            <ul className="mt-3 space-y-2.5">
+                                {plan.caracteristicas.map((caracteristica, idx) => (
+                                    <li key={idx} className="check-item">
+                                        <FaCheckCircle className="check-icon" />
+                                        <span className={caracteristicasComunes.includes(caracteristica) ? "" : "font-semibold text-white"}>
+                                            {caracteristica}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {plan.ideas && (
+                            <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-4">
+                                <h3 className="flex items-center gap-2 text-sm font-semibold text-purple-300">
+                                    <FaLightbulb className="text-purple-400" /> Ideas
                                 </h3>
-                                <ul className="space-y-1">
-                                    {plan.caracteristicas.map((caracteristica, idx) => (
-                                        <li key={idx} className="flex items-start text-gray-300 text-sm">
-                                            <span className="text-green-400 mr-2 text-xs">✓</span>
-                                            <span className={caracteristicasComunes.includes(caracteristica) ? "" : "font-bold"}>
-                                                {caracteristica}
-                                            </span>
+                                <ul className="mt-2.5 space-y-2">
+                                    {plan.ideas.map((idea, idx) => (
+                                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
+                                            <FaArrowRight className="mt-1 shrink-0 text-[10px] text-purple-400" />
+                                            {idea}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
+                        )}
 
-                            {plan.ideas && (
-                                <div className="mt-4 bg-gray-800/50 rounded-lg p-3">
-                                    <h3 className="text-sm font-semibold text-purple-300 mb-2">
-                                        💡 Ideas:
-                                    </h3>
-                                    <ul className="space-y-1">
-                                        {plan.ideas.map((idea, idx) => (
-                                            <li key={idx} className="text-gray-300 text-xs flex items-start">
-                                                <span className="text-purple-400 mr-2">→</span>
-                                                {idea}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            <div className="mt-4">
-                                <a
-                                    href={`https://wa.me/56981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full inline-flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300"
-                                >
-                                    Seleccionar Plan
-                                </a>
-                            </div>
+                        <div className="mt-8">
+                            <a
+                                href={`https://wa.me/56981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-primary w-full"
+                            >
+                                Seleccionar Plan
+                            </a>
                         </div>
-                    </motion.div>
+                    </motion.article>
                 ))}
             </div>
 
-            <motion.div
-                className="flex justify-center text-white text-4xl font-bold mt-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
+            <motion.h2
+                className="mt-20 text-center text-2xl font-bold tracking-tight text-white sm:text-3xl"
+                {...fadeUp}
+                transition={{ duration: 0.6 }}
             >
                 Ejemplos
-            </motion.div>
+            </motion.h2>
+            <motion.div className="section-accent" {...fadeUp} transition={{ duration: 0.6, delay: 0.15 }} />
 
-            <motion.ul
-                className="mt-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1.4 }}
-            >
-                <motion.li className="mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 1.6 }}>
-                    <Link className="btn glass text-2xl text-white" href='https://landing-ejemplo-chocolateria.vercel.app/'>
-                        Landing Page ejemplo
-                    </Link>
-                </motion.li>
-                <motion.li className="mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 1.8 }}>
-                    <Link className="btn glass text-2xl text-white mt-4" href='https://cv-test-two.vercel.app/'>
-                        Cv Online
-                    </Link>
-                </motion.li>
-                <motion.li className="mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 2 }}>
-                    <Link className="btn glass text-2xl text-white mt-4" href='https://gallery-photography.vercel.app/'>
-                        Portafolio Fotografía
-                    </Link>
-                </motion.li>
-            </motion.ul>
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                {ejemplos.map((ejemplo, index) => (
+                    <motion.a
+                        key={ejemplo.label}
+                        href={ejemplo.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="card-surface card-surface-hover flex items-center justify-between gap-3 px-6 py-5"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.45, delay: index * 0.08 }}
+                    >
+                        <span className="font-semibold text-white">{ejemplo.label}</span>
+                        <FaExternalLinkAlt className="shrink-0 text-sm text-blue-400" />
+                    </motion.a>
+                ))}
+            </div>
         </div>
     );
 }

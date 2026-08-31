@@ -1,6 +1,5 @@
 'use client'
 import Link from "next/link";
-import React from "react";
 import { motion } from "framer-motion";
 import { FaLaptopCode, FaShoppingCart, FaRocket, FaBullhorn, FaCheckCircle } from "react-icons/fa";
 
@@ -65,59 +64,66 @@ const services = [
 
 const ServiceCards = () => {
     return (
-        <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 mt-64">
-            <motion.h2 
-                className="text-white text-center text-6xl font-bold mb-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+        <section id="servicios" className="section-shell scroll-mt-24 py-20 sm:py-24">
+            <motion.h2
+                className="section-title"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                servicios
+                Servicios
             </motion.h2>
-            <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+            <motion.div
+                className="section-accent"
+                initial={{ opacity: 0, scaleX: 0 }}
+                whileInView={{ opacity: 1, scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+            />
+            <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-gray-400">
+                Desde tu primer sitio web hasta aplicaciones a medida y campañas en Meta.
+            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
                 {services.map((service, index) => (
-                    <motion.div
+                    <motion.article
                         key={index}
-                        className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:scale-105 flex flex-col h-full mt-14"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        className="card-surface card-surface-hover flex flex-col p-6 sm:p-8"
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: (index % 2) * 0.1 }}
                     >
-                        <div className="p-6 flex flex-col h-full">
-                            <div className="text-center mb-4">
-                                <h3 className="text-2xl font-bold mb-4 text-white">{service.title}</h3>
-                                <div className="text-5xl mb-4 flex justify-center text-blue-400">{service.icon}</div>
-                                <p className="text-gray-300 mb-4">{service.description}</p>
-                            </div>
-                            
-                            {/* Lista de detalles específicos */}
-                            <div className="mb-4 flex-grow">
-                                <h3 className="text-sm font-semibold text-blue-300 mb-2 flex items-center">
-                                    <FaCheckCircle className="mr-1" /> Incluye:
-                                </h3>
-                                <ul className="text-left space-y-2 mb-4">
-                                    {service.details.map((detail, detailIndex) => (
-                                        <li key={detailIndex} className="flex items-start text-gray-300 text-sm">
-                                            <span className="text-green-400 mr-2 text-xs mt-1"><FaCheckCircle /></span>
-                                            <span>{detail}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-            
-                            <div className="mt-auto">
-                                <Link
-                                    href={`/${service.link}`}
-                                    className="block w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-center rounded-md transition-colors duration-200"
-                                >
-                                    Más información
-                                </Link>
-                            </div>
+                        <div className="flex items-center gap-4">
+                            <div className="icon-tile">{service.icon}</div>
+                            <h3 className="text-xl font-bold text-white sm:text-2xl">{service.title}</h3>
                         </div>
-                    </motion.div>
+                        <p className="mt-4 text-gray-300">{service.description}</p>
+
+                        <h4 className="mt-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-300">
+                            <FaCheckCircle className="text-sm text-blue-400" /> Incluye
+                        </h4>
+                        <ul className="mt-3 space-y-2.5">
+                            {service.details.map((detail, detailIndex) => (
+                                <li key={detailIndex} className="check-item">
+                                    <FaCheckCircle className="check-icon" />
+                                    <span>{detail}</span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="mt-auto pt-8">
+                            <Link
+                                href={`/${service.link}`}
+                                className="btn-primary w-full"
+                            >
+                                Más información
+                            </Link>
+                        </div>
+                    </motion.article>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

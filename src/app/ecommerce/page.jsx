@@ -1,5 +1,6 @@
 'use client';
 import { motion } from "framer-motion";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function Ecommerce() {
     const planes = [
@@ -57,77 +58,69 @@ export default function Ecommerce() {
     ];
 
     return (
-        <div className="bg-black min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-                <motion.h1 
-                    className="text-4xl font-extrabold text-white text-center mb-8"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
+        <div className="section-shell py-16 sm:py-20">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+            >
+                <h1 className="text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
                     Soluciones E-commerce
-                </motion.h1>
-
-                <motion.p
-                    className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    Este tipo de sitio incluye más funcionalidades, como la integración de carritos de compra, pasarelas de pago, y administración de productos. 
+                </h1>
+                <div className="section-accent" />
+                <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-relaxed text-gray-300">
+                    Este tipo de sitio incluye más funcionalidades, como la integración de carritos de compra, pasarelas de pago, y administración de productos.
                     El precio puede variar dependiendo del número de productos, la personalización del diseño, y las integraciones necesarias.
                     Todos los planes incluyen las secciones de <strong className="text-white">Sobre nosotros</strong>, <strong className="text-white">Contacto y Productos</strong>.
-                </motion.p>
+                </p>
+            </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                    {planes.map((plan, index) => (
-                        <motion.div
-                            key={plan.nombre}
-                            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg shadow-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:scale-105 flex flex-col"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                        >
-                            <div className="p-6 flex flex-col h-full">
-                                <div className="text-center mb-4">
-                                    <h2 className="text-xl font-bold text-white mb-2">
-                                        {plan.nombre}
-                                    </h2>
-                                    <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-lg font-semibold inline-block">
-                                        {plan.precio}
-                                    </span>
-                                </div>
+            <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {planes.map((plan, index) => (
+                    <motion.article
+                        key={plan.nombre}
+                        className="card-surface card-surface-hover flex flex-col p-6 sm:p-7"
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                        <div className="text-center">
+                            <h2 className="text-xl font-bold text-white">{plan.nombre}</h2>
+                            <span className="mt-3 inline-block rounded-full bg-blue-600 px-5 py-1.5 text-lg font-semibold text-white shadow-lg shadow-blue-950/40">
+                                {plan.precio}
+                            </span>
+                        </div>
 
-                                <div className="mb-4 flex-grow">
-                                    <h3 className="text-sm font-semibold text-blue-300 mb-2">
-                                        ✓ Incluye:
-                                    </h3>
-                                    <ul className="space-y-1">
-                                        {plan.caracteristicas.map((caracteristica, idx) => (
-                                            <li key={idx} className="flex items-start text-gray-300 text-sm">
-                                                <span className="text-green-400 mr-2 text-xs">✓</span>
-                                                <span className={caracteristica.startsWith("**") ? "font-bold" : ""}>
-                                                    {caracteristica.replace(/\*\*/g, "")}
-                                                </span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                        <div className="mt-6 flex-grow">
+                            <h3 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-300">
+                                <FaCheckCircle className="text-sm text-blue-400" /> Incluye
+                            </h3>
+                            <ul className="mt-3 space-y-2.5">
+                                {plan.caracteristicas.map((caracteristica, idx) => (
+                                    <li key={idx} className="check-item">
+                                        <FaCheckCircle className="check-icon" />
+                                        <span className={caracteristica.startsWith("**") ? "font-semibold text-white" : ""}>
+                                            {caracteristica.replace(/\*\*/g, "")}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
 
-                                <div className="mt-4">
-                                    <a
-                                        href={`https://wa.me/56981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-full inline-flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300"
-                                    >
-                                        Seleccionar Plan
-                                    </a>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+                        <div className="mt-8">
+                            <a
+                                href={`https://wa.me/56981512691?text=¡Hola!%20Estoy%20interesado%20en%20el%20plan%20${encodeURIComponent(plan.nombre)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-primary w-full"
+                            >
+                                Seleccionar Plan
+                            </a>
+                        </div>
+                    </motion.article>
+                ))}
             </div>
         </div>
     );
